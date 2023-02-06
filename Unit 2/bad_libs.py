@@ -1,0 +1,12 @@
+adjective = input("adjective: ")
+typeOfBird = input("type of bird: ")
+roomInAHouse = input("room in a house: ")
+verbPastTense = input("verb past tense: ")
+relativesName = input("relative's name: ")
+noun = input("noun: ")
+aLiquid = input("a liquid: ")
+verbEndingInIng = input("verb ending in -ing: ")
+partOfTheBodyPlural = input("part of the body (plural): ")
+pluralNoun = input("plural noun: ")
+
+print("I'm a nerd and I'm not a gamer. However, after I got into the", adjective, "college, I started to dance a bit. I also saw", typeOfBird, "which gave me a sign to continue. Eventually, that built up to a lot and a lot of dancing. I practice at my", roomInAHouse, "often. This passion in dancing became my drive in life. I had", verbPastTense, "also as a side hobby. At some point,", relativesName, "joined me in dancing so that was fun. We always danced while holding a", noun, "and drinking", aLiquid, "afterwards. Also, I loved", verbEndingInIng, "as well. My", partOfTheBodyPlural, "get so sore from doing that. The only cure is to eat some", pluralNoun, "while skydiving. Dance motivates me to do homework on time, take care of my physical, mental, emotional, and social health.")
