@@ -1,5 +1,5 @@
 '''
-    Practice for functions in HW 2.2
+    Practice for functions in HW 2.2 - #2, 3
     Author: Sam Sit
 '''
 
