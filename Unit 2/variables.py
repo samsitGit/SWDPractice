@@ -24,6 +24,9 @@ def prompt_and_print():
     print(num1*num2)
     print(num1/num2)
 
-variable_practice()
-expressions_practice()
-prompt_and_print()
+def main():
+    variable_practice()
+    expressions_practice()
+    prompt_and_print()
+
+main()
