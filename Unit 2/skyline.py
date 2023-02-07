@@ -1,12 +1,12 @@
 import turtle
 
-def rect(x, y, height, base, pencolor, fillcolor):
+def rect(x, y, height, base, color):
     turtle.up()
     turtle.goto(x,y)
     turtle.down()
     turtle.pensize(4)
-    turtle.color(pencolor)
-    turtle.fillcolor(fillcolor)
+    turtle.color(color)
+    turtle.fillcolor(color)
     turtle.begin_fill()
     turtle.forward(base)
     turtle.left(90)
@@ -18,60 +18,78 @@ def rect(x, y, height, base, pencolor, fillcolor):
     turtle.left(90)
     turtle.end_fill()
 
-def triangle(x, y, size, pencolor, fillcolor):
+def star(x, y, size, color):
     turtle.up()
     turtle.goto(x,y)
     turtle.down()
     turtle.pensize(4)
-    turtle.color(pencolor)
-    turtle.fillcolor(fillcolor)
+    turtle.color(color)
+    turtle.fillcolor(color)
     turtle.begin_fill()
-    turtle.left(60)
+    turtle.left(144)
     turtle.forward(size)
-    turtle.left(60)
+    turtle.left(144)
     turtle.forward(size)
-    turtle.left(60)
+    turtle.left(144)
+    turtle.forward(size)
+    turtle.left(144)
+    turtle.forward(size)
+    turtle.left(144)
     turtle.forward(size)
     turtle.end_fill()
 
-def circle(x, y, size, pencolor, fillcolor):
+def circle(x, y, size, color):
     turtle.up()
     turtle.goto(x,y)
     turtle.down()
     turtle.pensize(4)
-    turtle.color(pencolor)
-    turtle.fillcolor(fillcolor)
+    turtle.color(color)
+    turtle.fillcolor(color)
     turtle.begin_fill()
     turtle.circle(size)
     turtle.end_fill()
 
 def skyline():
     floorX = -300
-    rect(-860, floorX, 600, 100, "black", "black")
-    rect(-760, floorX, 500, 100, "black", "black")
-    rect(-660, floorX, 200, 100, "black", "black")
-    rect(-560, floorX, 650, 100, "black", "black")
-    rect(-460, floorX, 300, 100, "black", "black")
-    rect(-360, floorX, 600, 100, "black", "black")
-    rect(-260, floorX, 450, 100, "black", "black")
-    rect(-160, floorX, 550, 100, "black", "black")
-    rect(-60, floorX, 400, 100, "black", "black")
-    rect(40, floorX, 700, 100, "black", "black")
-    rect(140, floorX, 550, 100, "black", "black")
-    rect(240, floorX, 450, 100, "black", "black")
-    rect(340, floorX, 600, 100, "black", "black")
-    rect(440, floorX, 650, 100, "black", "black")
-    rect(540, floorX, 550, 100, "black", "black")
-    rect(640, floorX, 450, 100, "black", "black")
-    rect(740, floorX, 250, 100, "black", "black")
-    rect(840, floorX, 400, 100, "black", "black")
+    size = 110
+    rect(-860, floorX, 600, size, "black")
+    rect(-750, floorX, 500, size, "black")
+    rect(-640, floorX, 200, size, "black")
+    rect(-530, floorX, 650, size, "black")
+    rect(-420, floorX, 300, size, "black")
+    rect(-310, floorX, 600, size, "black")
+    rect(-200, floorX, 450, size, "black")
+    rect(-90, floorX, 550, size, "black")
+    rect(20, floorX, 200, size, "black")
+    rect(130, floorX, 600, size, "black")
+    rect(240, floorX, 650, size, "black")
+    rect(350, floorX, 450, size, "black")
+    rect(460, floorX, 600, size, "black")
+    rect(570, floorX, 650, size, "black")
+    rect(680, floorX, 550, size, "black")
+    rect(790, floorX, 450, size, "black")
+
+def background():
+    size = 100
+    rect(-860, 450, size, 1750, "blue")
+    rect(-860, 350, size, 1750, "purple")
+    rect(-860, 250, size, 1750, "magenta")
+    rect(-860, 150, size, 1750, "violet")
+    rect(-860, 50, size, 1750, "orange")
+    rect(-860, -50, size, 1750, "gold")
+    rect(-860, -150, size, 1750, "yellow")
+
+    star(-800, 360, 20, "yellow")
+    star(-750, 340, 20, "yellow")
+    star(-600, 360, 20, "yellow")
+    star(-500, 320, 20, "yellow")
+
+    rect(-860, -550, 300, 1750, "gray")
 
 def main():
-    turtle.bgcolor("blue")
-
+    
+    background()
     skyline()
-
-    rect(-860, -550, 300, 1750, "gray", "gray")
 
     input("Press enter to continue...")
 
