@@ -49,6 +49,22 @@ def circle(x, y, size, color):
     turtle.circle(size)
     turtle.end_fill()
 
+def triangle(x, y, size, color):
+    turtle.up()
+    turtle.goto(x,y)
+    turtle.down()
+    turtle.pensize(4)
+    turtle.color(color)
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    turtle.forward(size)
+    turtle.left(120)
+    turtle.forward(size)
+    turtle.left(120)
+    turtle.forward(size)
+    turtle.left(120)
+    turtle.end_fill()
+
 def skyline():
     floorX = -300
     size = 110
@@ -137,10 +153,11 @@ def clouds():
 
 def main():
     turtle.bgcolor("blue")
-    background()
-    decorations()
-    clouds()
-    skyline()
+    #background()
+    #decorations()
+    #clouds()
+    #skyline()
+    triangle(0, 0, 100, "yellow")
 
     input("Press enter to continue...")
 
