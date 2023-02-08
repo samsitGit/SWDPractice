@@ -27,15 +27,16 @@ def draw_centered_circle(x, y, radius, color):
 def draw_smiley(x, y, face_size, eye_color):
 
     eye_x = x + face_size * .35
-    eye_y = x + face_size * .25
+    eye_x2 = x - face_size * .35
+    eye_y = y + face_size * .25
     eye_size = .25 * face_size
     mouth_x = x
-    mouth_y = x + face_size * -.25
+    mouth_y = y - (face_size * .25)
     mouth_size = .6*face_size
 
     draw_centered_circle(x, y, face_size, "yellow")
     draw_centered_circle(x, y, .1*face_size, "pink")
-    draw_eye(-(eye_x), eye_y, eye_size, eye_color)
+    draw_eye(eye_x2, eye_y, eye_size, eye_color)
     draw_eye(eye_x, eye_y, eye_size, eye_color)
     draw_mouth(mouth_x, mouth_y, mouth_size, "black")
 
@@ -66,7 +67,6 @@ def draw_mouth(x, y, radius, fill_color):
     turtle.right(90)
     turtle.up()
     turtle.forward(radius)
-    turtle.right(180)
 
 def main():
 
@@ -76,8 +76,12 @@ def main():
     #draw_centered_circle(0, 0, 50, "blue")
     #draw_smiley()
     #tweak()
-
+    turtle.speed(0)
     draw_smiley(0, 0, 150, "blue")
+    draw_smiley(-150, -150, 50, "blue")
+    draw_smiley(200, 200, 200, "blue")
+    draw_smiley(-200, 100, 80, "blue")
+    draw_smiley(250, -200, 120, "blue")
 
     input("Press enter to continue...")
 
