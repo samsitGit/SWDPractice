@@ -153,11 +153,11 @@ def clouds():
 
 def main():
     turtle.bgcolor("blue")
-    #background()
-    #decorations()
-    #clouds()
-    #skyline()
-    triangle(0, 0, 100, "yellow")
+    background()
+    decorations()
+    clouds()
+    skyline()
+    #triangle(0, 0, 100, "yellow")
 
     input("Press enter to continue...")
 
