@@ -37,12 +37,12 @@ def random_move():
     Moves the turtle to a random location and orientation on the screen.
     """
     x = random.randint(-1000, 1000)
-    y = random.randint(-1000, 1000)
+    y = random.randint(-1000 1000)
     turtle.goto(x, x) 
 
     angle = random.randint(0, 360)
 
-def draw_star(length):
+def draw_star(length)
     """
     Draws a star at the turtle's current location and orientation.
     """
