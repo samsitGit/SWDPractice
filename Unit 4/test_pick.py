@@ -16,4 +16,4 @@ def test_check_guess_too_low():
     assert (pick.check_guess(4, 5)) > 0
 
 if __name__ == "__main__":
-    main()
+    pick.main()
