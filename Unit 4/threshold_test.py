@@ -19,3 +19,6 @@ def test_threshold_negative():
 
 def test_threshold_equal():
     assert within_threshold(1, 2, 1) == True
+
+def test_threshold_false():
+    assert within_threshold(1, 3, 1) == False
