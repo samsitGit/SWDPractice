@@ -19,7 +19,7 @@ def initialize(x, y, side):
     turtle.pencolor("black")
     turtle.down()
 
-def draw_pixel():
+def draw_black_pixel():
     turtle.fillcolor("black")
     turtle.begin_fill()
     turtle.down()
@@ -30,10 +30,11 @@ def draw_pixel():
         turtle.right(90)
     turtle.up()
     turtle.end_fill()
-    turtle.goto()
+    turtle.goto(0, 0)
 
 def main():
     initialize(-300, 300, 100)
-    draw_pixel()
+    draw_black_pixel()
+    input()
 
 main()
