@@ -1,3 +1,8 @@
+'''
+    4.2 Lecture
+    Author: Sam Sit
+'''
+
 import turtle
 import pixart
 

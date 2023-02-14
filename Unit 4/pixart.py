@@ -48,6 +48,45 @@ def draw_red_pixel():
     turtle.end_fill()
     turtle.forward(PIXEL_SIZE)
 '''
+
+def decoder(code):
+    if code == 0:
+        return "black"
+    elif code == 1:
+        return "white"
+    elif code == 2:
+        return "red"
+    elif code == 3:
+        return "yellow"
+    elif code == 4:
+        return "orange"
+    elif code == 5:
+        return "green"
+    elif code == 6:
+        return "yellowgreen"
+    elif code == 7:
+        return "sienna"
+    elif code == 8:
+        return "tan"
+    elif code == 9:
+        return "gray"
+    elif code == A:
+        return "darkgray"
+    
+def draw_pixel_by_code(code):
+    turtle.pencolor("black")
+    turtle.fillcolor(decoder(code))
+    turtle.begin_fill()
+    turtle.down()
+    times = 0
+    while times < 4:
+        times = times + 1
+        turtle.forward(PIXEL_SIZE)
+        turtle.right(90)
+    turtle.up()
+    turtle.end_fill()
+    turtle.forward(PIXEL_SIZE)
+
 def main():
     initialize()
     input()
