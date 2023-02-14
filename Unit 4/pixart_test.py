@@ -29,6 +29,7 @@ def test_pixel_by_code():
 def test_checkers():
     pixart.initialize()
     checkers.draw_checkers()
+    assertle(0, 300, 300, False, "black", "black")
     
 
 #def test_checkers_row():
@@ -36,8 +37,8 @@ def test_checkers():
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
-    assert (x == turtle.xcor())
-    assert (y == turtle.ycor())
+    assert (x == round(turtle.xcor()))
+    assert (y == round(turtle.ycor()))
     assert (state == turtle.isdown())
     assert (pen == turtle.pencolor())
     assert (fill == turtle.fillcolor())

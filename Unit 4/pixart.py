@@ -89,6 +89,5 @@ def draw_pixel_by_code(code):
 
 def main():
     initialize()
-    input()
-
+    
 main()
