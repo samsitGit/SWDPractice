@@ -19,9 +19,10 @@ def initialize():
     turtle.fillcolor("white")
     turtle.pencolor("black")
 
-def draw_black_pixel():
+#def draw_black_pixel():
+def draw_pixel(color):
     turtle.pencolor("black")
-    turtle.fillcolor("black")
+    turtle.fillcolor(color)
     turtle.begin_fill()
     turtle.down()
     times = 0
@@ -32,24 +33,23 @@ def draw_black_pixel():
     turtle.up()
     turtle.end_fill()
     turtle.forward(PIXEL_SIZE)
-
+'''
 def draw_red_pixel():
     turtle.pencolor("black")
     turtle.fillcolor("red")
     turtle.begin_fill()
     turtle.down()
     times = 0
-    while times < 5:
+    while times < 4:
         times = times + 1
         turtle.forward(PIXEL_SIZE)
         turtle.right(90)
     turtle.up()
     turtle.end_fill()
     turtle.forward(PIXEL_SIZE)
-
+'''
 def main():
     initialize()
-    draw_black_pixel()
     input()
 
 main()

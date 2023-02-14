@@ -7,10 +7,14 @@ def test_initialize():
     assertle(0, -300, 300, False, "black", "white")
 
 def test_black_pixel():
-    pixart.draw_black_pixel()
+    #pixart.draw_black_pixel()
+    pixart.draw_pixel("black")
     assertle(0, -270, 300, False, "black", "black")
 
-
+def test_red_pixel():
+    #pixart.draw_red_pixel()
+    pixart.draw_pixel("red")
+    assertle(0, -240, 300, False, "black", "red")
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
