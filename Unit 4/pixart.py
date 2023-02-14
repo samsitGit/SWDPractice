@@ -31,7 +31,7 @@ def draw_black_pixel():
         turtle.right(90)
     turtle.up()
     turtle.end_fill()
-    turtle.goto(0, 0)
+    #turtle.goto(0, 0)
 
 def main():
     initialize()
