@@ -21,6 +21,10 @@ def test_red_pixel():
     pixart.draw_pixel("red")
     assertle(0, -240, 300, False, "black", "red")
 
+def test_pixel_by_code():
+    pixart.draw_pixel_by_code(5)
+    assertle(0, -210, 300, False, "black", "green")
+
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
     assert (x == turtle.xcor())
