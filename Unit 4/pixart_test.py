@@ -5,6 +5,7 @@
 
 import turtle
 import pixart
+import checkers
 
 def test_initialize():
     pixart.initialize()
@@ -24,6 +25,9 @@ def test_red_pixel():
 def test_pixel_by_code():
     pixart.draw_pixel_by_code(5)
     assertle(0, -210, 300, False, "black", "green")
+
+def test_checkers():
+    checkers.draw_checkers()
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
