@@ -32,11 +32,23 @@ def printSepLineReverse(string):
         print(string[count])
         count = count - 1
 
+def loopSpam():
+    sum = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        elif num % 2 == 0:
+            continue
+        else:
+            sum = sum + num
+    print("sum = " + str(sum))
 
 def main():
     #countdown(5)
     #quotable()
     #printSepLine("Yoda")
-    printSepLineReverse("Yoda")
+    #printSepLineReverse("Yoda")
+    loopSpam()
 
 main()
