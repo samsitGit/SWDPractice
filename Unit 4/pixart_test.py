@@ -1,5 +1,5 @@
 '''
-    4.2 Lecture
+    4.2 Lecture & HW
     Author: Sam Sit
 '''
 
@@ -28,6 +28,9 @@ def test_pixel_by_code():
 
 def test_checkers():
     checkers.draw_checkers()
+
+def test_checkers_row():
+    checkers.draw_checkers_row(1, 20)
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
