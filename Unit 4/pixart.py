@@ -9,11 +9,12 @@ PIXEL_SIZE = 30
 ROWS = 20
 COLUMNS = 20
 
-def initialize(x, y, side):
+def initialize():
+    turtle.reset()
     turtle.bgcolor("blue")
     turtle.tracer(0)
     turtle.up()
-    turtle.goto(x, y)
+    turtle.goto(-300, 300)
     turtle.pensize(1)
     turtle.fillcolor("white")
     turtle.pencolor("black")
@@ -33,7 +34,7 @@ def draw_black_pixel():
     turtle.goto(0, 0)
 
 def main():
-    initialize(-300, 300, 100)
+    initialize()
     draw_black_pixel()
     input()
 
