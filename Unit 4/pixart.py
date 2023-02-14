@@ -70,7 +70,7 @@ def decoder(code):
         return "tan"
     elif code == 9:
         return "gray"
-    elif code == A:
+    elif code == 'A':
         return "darkgray"
     
 def draw_pixel_by_code(code):
@@ -89,5 +89,5 @@ def draw_pixel_by_code(code):
 
 def main():
     initialize()
-    
+
 main()

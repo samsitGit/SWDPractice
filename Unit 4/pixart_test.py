@@ -29,7 +29,8 @@ def test_pixel_by_code():
 def test_checkers():
     pixart.initialize()
     checkers.draw_checkers()
-    assertle(0, 300, 300, False, "black", "black")
+    #assertle(0, 300, 300, False, "black", "black")
+    assertle(0, 300, -270, False, "black", "red")
     
 
 #def test_checkers_row():
