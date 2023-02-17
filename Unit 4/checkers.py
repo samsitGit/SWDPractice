@@ -14,11 +14,6 @@ def draw_checkers():
         next_row()
         count = count + 1
 
-
-def next_row():
-    rowY = turtle.ycor()
-    turtle.goto(-300, rowY - pixart.PIXEL_SIZE)
-
 def draw_checkers_row(row, col):
     count = 0
     while count < col/2:

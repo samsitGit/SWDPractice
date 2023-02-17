@@ -89,6 +89,10 @@ def draw_pixel_by_code(code):
     turtle.end_fill()
     turtle.forward(PIXEL_SIZE)
 
+def next_row():
+    rowY = turtle.ycor()
+    turtle.goto(-300, rowY - pixart.PIXEL_SIZE)
+
 def main():
     initialize()
 
