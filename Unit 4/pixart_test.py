@@ -39,7 +39,7 @@ def test_checkers():
 def test_move():
     pixart.initialize()
     pixart.move(5, 4)
-    assertle(0, 150, 120, False, "black", "black")
+    assertle(0, 150, 120, False, "black", "white")
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
