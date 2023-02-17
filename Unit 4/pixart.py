@@ -50,28 +50,30 @@ def draw_red_pixel():
 '''
 
 def decoder(code):
-    if code == 0:
+    if code == "0":
         return "black"
-    elif code == 1:
+    elif code == "1":
         return "white"
-    elif code == 2:
+    elif code == "2":
         return "red"
-    elif code == 3:
+    elif code == "3":
         return "yellow"
-    elif code == 4:
+    elif code == "4":
         return "orange"
-    elif code == 5:
+    elif code == "5":
         return "green"
-    elif code == 6:
+    elif code == "6":
         return "yellowgreen"
-    elif code == 7:
+    elif code == "7":
         return "sienna"
-    elif code == 8:
+    elif code == "8":
         return "tan"
-    elif code == 9:
+    elif code == "9":
         return "gray"
     elif code == 'A':
         return "darkgray"
+    else:
+        return False
     
 def draw_pixel_by_code(code):
     turtle.pencolor("black")
