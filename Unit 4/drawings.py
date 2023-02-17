@@ -5,13 +5,6 @@
 
 import pixart
 
-def len(string):
-    count = 0
-    for x in string:
-        count += 1
-    return count
-
-
 def draw_row(string):
     length = len(string)
     if length == 0:
