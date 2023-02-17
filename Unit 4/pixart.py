@@ -93,6 +93,9 @@ def next_row():
     rowY = turtle.ycor()
     turtle.goto(-300, rowY - PIXEL_SIZE)
 
+def move(col, row):
+    turtle.goto(-300, 300)
+
 def main():
     initialize()
 

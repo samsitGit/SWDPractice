@@ -32,10 +32,14 @@ def test_checkers():
     checkers.draw_checkers()
     #assertle(0, 300, 300, False, "black", "black")
     assertle(0, -300, -300, False, "black", "red")
-    
 
 #def test_checkers_row():
     #checkers.draw_checkers_row(1, 20)
+
+def test_move():
+    pixart.initialize()
+    pixart.move(5, 4)
+    assertle(0, 150, 120, False, "black", "black")
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
