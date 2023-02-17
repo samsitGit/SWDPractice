@@ -27,7 +27,7 @@ def draw_checkers_row(row, col):
 
 def main():
     pixart.initialize()
-    #turtle.tracer(0)
+    turtle.tracer(0)
     draw_checkers()
     input()
 
