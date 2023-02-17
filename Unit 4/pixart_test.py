@@ -1,6 +1,7 @@
 '''
     4.2 Lecture & HW
     Author: Sam Sit
+    python -m pytest -s .\pixart_test.py::test_checkers
 '''
 
 import turtle
