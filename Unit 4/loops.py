@@ -1,5 +1,5 @@
 '''
-    4.2 Lecture
+    4.2 + 4.3 Lecture
     Author: Sam Sit
 '''
 
@@ -44,11 +44,20 @@ def loopSpam():
             sum = sum + num
     print("sum = " + str(sum))
 
+def print_range(range):
+    for char in range:
+        print(char, end=" ")
+    print()
+
 def main():
     #countdown(5)
     #quotable()
     #printSepLine("Yoda")
     #printSepLineReverse("Yoda")
-    loopSpam()
+    #loopSpam()
+    r1_5 = range(1, 5)
+    print_range(r1_5)
+    r2_10 = range(2, 10)
+    print_range(r2_10)
 
 main()

@@ -97,10 +97,12 @@ def move(col, row):
     turtle.goto(-300 + col * PIXEL_SIZE, 300 - row * PIXEL_SIZE)
 
 def draw_row(row, col, num):
+    #5 4 8
     count = 0
     color = "red"
 
     while count < num:
+        #4 + 0
         move(col + count, row)
         draw_pixel(color)
         count += 1
