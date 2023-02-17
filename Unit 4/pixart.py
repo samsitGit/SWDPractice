@@ -94,7 +94,11 @@ def next_row():
     turtle.goto(-300, rowY - PIXEL_SIZE)
 
 def move(col, row):
-    turtle.goto(col * PIXEL_SIZE, row * PIXEL_SIZE)
+    turtle.goto(-300 + col * PIXEL_SIZE, 300 - row * PIXEL_SIZE)
+
+def draw_row(row, col, num):
+    count = 0
+    color = "red"
 
 def main():
     initialize()

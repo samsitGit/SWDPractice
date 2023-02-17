@@ -41,6 +41,11 @@ def test_move():
     pixart.move(5, 4)
     assertle(0, 150, 120, False, "black", "white")
 
+def test_draw_row():
+    pixart.initialize()
+    pixart.draw_row()
+    assertle(0, 300, -300, False, "black", "white")
+
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
     assert (x == round(turtle.xcor()))
