@@ -37,6 +37,6 @@ def main():
         result = draw_row(string)
         pixart.next_row()
     #pixart.draw_pixel_by_code("1")
-    input()
+    input("terminated... press enter to end...")
 
 main()
