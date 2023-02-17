@@ -11,7 +11,7 @@ def draw_checkers():
     count = 0
     while count < totalRows:
         draw_checkers_row(count, 20)
-        next_row()
+        pixart.next_row()
         count = count + 1
 
 def draw_checkers_row(row, col):
@@ -27,7 +27,7 @@ def draw_checkers_row(row, col):
 
 def main():
     pixart.initialize()
-    turtle.tracer(0)
+    #turtle.tracer(0)
     draw_checkers()
     input()
 

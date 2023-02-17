@@ -26,10 +26,16 @@ def draw_row(string):
             pixart.draw_pixel_by_code(color)
         count = count + 1
 
-def 
+    return True
 
 def main():
-    draw_row("01A753421")
+    pixart.turtle.tracer(0)
+    result = draw_row("01A753421")
+    pixart.next_row()
+    while result:
+        string = input("Enter a string: ")
+        result = draw_row(string)
+        pixart.next_row()
     #pixart.draw_pixel_by_code("1")
     input()
 
