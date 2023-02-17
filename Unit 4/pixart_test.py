@@ -39,12 +39,16 @@ def test_checkers():
 def test_move():
     pixart.initialize()
     pixart.move(5, 4)
-    assertle(0, 150, 120, False, "black", "white")
+    assertle(0, -150, 180, False, "black", "white")
 
 def test_draw_row():
     pixart.initialize()
-    pixart.draw_row()
-    assertle(0, 300, -300, False, "black", "white")
+    pixart.draw_row(5, 4, 8) #row, col, pixels
+    # start -300, 300, moved to 5, 4 (y, x) means -180 on x
+    # y is 180 to start but end of pixel drawing makes it 150
+    # now move to right 8 more, which adds 240 is 60
+    #but it start on next pixel automatically at the end of the function, meaning it is 60
+    assertle(0, 60, 150, False, "black", "red")
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())

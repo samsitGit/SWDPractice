@@ -100,7 +100,14 @@ def draw_row(row, col, num):
     count = 0
     color = "red"
 
+    while count < num:
+        move(col + count, row)
+        draw_pixel(color)
+        count += 1
+
 def main():
     initialize()
+    draw_row(5, 4, 8)
+    input()
 
 main()
