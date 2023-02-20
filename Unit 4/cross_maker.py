@@ -21,8 +21,23 @@ def initialize():
     turtle.fillcolor("white")
     turtle.pencolor("black")
 
+def draw_pixel(color):
+    turtle.pencolor("black")
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    turtle.down()
+    times = 0
+    while times < 4:
+        times = times + 1
+        turtle.forward(PIXEL_SIZE)
+        turtle.right(90)
+    turtle.up()
+    turtle.end_fill()
+    turtle.forward(PIXEL_SIZE)
+
 def write_letter(letter):
     turtle.write(letter, align='center', font=("Arial", 19, "normal"))
+    draw_pixel("green")
 
 def write_word(col, row, word, axis):
     if axis == "h":
