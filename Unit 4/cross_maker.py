@@ -67,13 +67,22 @@ def decode_command(string):
 def move(col, row):
     turtle.goto(-300 + col * PIXEL_SIZE, 300 - row * PIXEL_SIZE)
 
+def user_menu():
+    while True:
+        command = input("Enter a command: ")
+        if command == "" or command == None:
+            break
+        else:
+            decode_command(command)
+
 def main():
     initialize()
     #move(4,5)
     #write_letter("B")
-    
+    #write_word(3, 6, "everyone", "h")
     #command = input("Enter a command: ")
     #decode_command(command)
+    user_menu()
     #input()
 
 main()
