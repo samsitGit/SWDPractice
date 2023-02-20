@@ -52,12 +52,13 @@ def test_draw_row():
 
 def test_square():
     pixart.initialize()
-    pixart.square(4, 5, 8, "green") #row, col, pixels
-    # start -300, 300, moved to 5, 4 (y, x) means -180 on x
-    # y is 180 to start but end of pixel drawing makes it 150
-    # now move to right 8 more, which adds 240 is 60
-    #but it start on next pixel automatically at the end of the function, meaning it is 60
+    pixart.square(4, 5, 8, "green")
     assertle(0, 90, -30, False, "black", "green")
+
+def test_rectangle():
+    pixart.initialize()
+    pixart.rectangle(4, 5, 6, 10, "orange")
+    assertle(0, 150, 30, False, "black", "orange")
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())
