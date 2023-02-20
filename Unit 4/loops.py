@@ -49,15 +49,25 @@ def print_range(range):
         print(char, end=" ")
     print()
 
+def print_reverse(string):
+    newString = ""
+    for char in string:
+        newString = char + newString
+    print(newString)
+
 def main():
     #countdown(5)
     #quotable()
     #printSepLine("Yoda")
     #printSepLineReverse("Yoda")
     #loopSpam()
-    r1_5 = range(1, 5)
-    print_range(r1_5)
-    r2_10 = range(2, 10)
-    print_range(r2_10)
+    #r1_5 = range(1, 5)
+    #print_range(r1_5)
+    #r2_10 = range(2, 10)
+    #print_range(r2_10)
+    print_reverse("")
+    print_reverse("a")
+    print_reverse("Hello, World!")
+    print_reverse("Sam Sit")
 
 main()
