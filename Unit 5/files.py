@@ -9,5 +9,6 @@ def print_lines(filename):
         length = len(line)
         print(length)
 def main():
-    print_lines()
+    #made my own txt file because I don't have the file from the course
+    print_lines("../Unit 5/random.txt")
 main()

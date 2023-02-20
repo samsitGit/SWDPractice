@@ -1,0 +1,17 @@
+A file must be opened before the data insid
+e it can be read into your program. The buil
+t in open path function will open and return the f
+ile at the specified path. You may use an absolute path 
+or a path that is relative to your programs working direc
+tory. By default the working directory is the directory 
+from which your program is executed. We have used sequenc
+es in our programs many times. ○Strings are sequences of
+characters. Ranges are sequences of integers. A text fi
+le can be treated as though it is a sequence of lines. ○E
+ach line is a string of text. Like the other sequences t
+hat we have used, a file will work with a for loop. ○At 
+the beginning of each iteration, the next line of text i
+n the file is assigned to the loop variable. The loop w
+ill terminate when the end of the file is reached. Unlik
+e other sequences, you cannot use the operator to rando
+mly access lines.
