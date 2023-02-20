@@ -24,7 +24,6 @@ def initialize():
 def write_letter(letter):
     turtle.write(letter, align='center', font=("Arial", 19, "normal"))
 
-
 def move(col, row):
     turtle.goto(-300 + col * PIXEL_SIZE, 300 - row * PIXEL_SIZE)
 
