@@ -111,11 +111,16 @@ def square(row, column, size, color):
     for i in range(size):
         draw_row(row+i, column, size, color)
 
+def rectangle(row, column, height, width, color):
+    for i in range(height):
+        draw_row(row+i, column, width, color)
+
 def main():
     initialize()
     #draw_row(5, 4, 8, "red")
     turtle.tracer(0)
-    square(4, 5, 8, "green")
+    #square(4, 5, 8, "green")
+    rectangle(4, 5, 6, 10, "orange")
     input()
 
 main()
