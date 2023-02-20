@@ -11,7 +11,7 @@ def test_draw_pixel():
     cross_maker.initialize()
     cross_maker.draw_pixel("green")
     assertle(0, -300, 300, False, "black", "green")
-
+    #assuming turtle return to original place
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())

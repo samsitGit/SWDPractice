@@ -33,7 +33,6 @@ def draw_pixel(color):
         turtle.right(90)
     turtle.up()
     turtle.end_fill()
-    turtle.forward(PIXEL_SIZE)
 
 def write_letter(letter):
     turtle.write(letter, align='center', font=("Arial", 19, "normal"))
@@ -68,8 +67,9 @@ def main():
     initialize()
     #move(4,5)
     #write_letter("B")
-    command = input("Enter a command: ")
-    decode_command(command)
+    write_word(3, 6, "everyone", "h")
+    #command = input("Enter a command: ")
+    #decode_command(command)
     input()
 
 main()
