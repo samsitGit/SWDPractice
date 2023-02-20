@@ -23,7 +23,11 @@ def test_write_letter():
     assertle(-285, 270, False, "black", "green")
     input()
 
-
+def test_write_word():
+    cross_maker.initialize()
+    cross_maker.write_word(3, 6, "everyone", "h")
+    assertle(15, 90, False, "black", "green")
+    input()
 
 def assertle(x, y, state, pen, fill):
     assert (x == round(turtle.xcor()))
