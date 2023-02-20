@@ -55,6 +55,15 @@ def print_reverse(string):
         newString = char + newString
     print(newString)
 
+def splitString(string, delimiter):
+    if delimiter == "" or delimiter == None:
+        for i in string:
+            print(i)
+    else:
+        tokens = string.split(delimiter)
+        for i in tokens:
+            print(i)
+
 def main():
     #countdown(5)
     #quotable()
@@ -65,9 +74,13 @@ def main():
     #print_range(r1_5)
     #r2_10 = range(2, 10)
     #print_range(r2_10)
-    print_reverse("")
-    print_reverse("a")
-    print_reverse("Hello, World!")
-    print_reverse("Sam Sit")
+    #print_reverse("")
+    #print_reverse("a")
+    #print_reverse("Hello, World!")
+    #print_reverse("Sam Sit")
+    #delimiter = '\n'
+    #splitString('"That\'s my house," I said.', delimiter)
+    #splitString("one two,\tthree\nfour five", delimiter)
+    #splitString("My name is \"Lucy van Pelt.\"", delimiter)
 
 main()
