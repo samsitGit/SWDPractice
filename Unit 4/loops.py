@@ -77,7 +77,7 @@ def main():
     #print_reverse("")
     #print_reverse("a")
     #print_reverse("Hello, World!")
-    #print_reverse("Sam Sit")
+    print_reverse("Sam Sit")
     #delimiter = '\n'
     #splitString('"That\'s my house," I said.', delimiter)
     #splitString("one two,\tthree\nfour five", delimiter)
