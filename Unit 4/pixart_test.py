@@ -43,12 +43,21 @@ def test_move():
 
 def test_draw_row():
     pixart.initialize()
-    pixart.draw_row(5, 4, 8) #row, col, pixels
+    pixart.draw_row(5, 4, 8, "red") #row, col, pixels
     # start -300, 300, moved to 5, 4 (y, x) means -180 on x
     # y is 180 to start but end of pixel drawing makes it 150
     # now move to right 8 more, which adds 240 is 60
     #but it start on next pixel automatically at the end of the function, meaning it is 60
     assertle(0, 60, 150, False, "black", "red")
+
+def test_square():
+    pixart.initialize()
+    pixart.square(4, 5, 8, "green") #row, col, pixels
+    # start -300, 300, moved to 5, 4 (y, x) means -180 on x
+    # y is 180 to start but end of pixel drawing makes it 150
+    # now move to right 8 more, which adds 240 is 60
+    #but it start on next pixel automatically at the end of the function, meaning it is 60
+    assertle(0, 90, -30, False, "black", "green")
 
 def assertle(speed, x, y, state, pen, fill):
     assert (speed == turtle.speed())

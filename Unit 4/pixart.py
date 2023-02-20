@@ -1,5 +1,5 @@
 '''
-    4.2 Lecture
+    4.2 Lecture + HW
     Author: Sam Sit
 '''
 
@@ -96,10 +96,10 @@ def next_row():
 def move(col, row):
     turtle.goto(-300 + col * PIXEL_SIZE, 300 - row * PIXEL_SIZE)
 
-def draw_row(row, col, num):
+def draw_row(row, col, num, color):
     #5 4 8
     count = 0
-    color = "red"
+    #color = "red"
 
     while count < num:
         #4 + 0
@@ -107,9 +107,15 @@ def draw_row(row, col, num):
         draw_pixel(color)
         count += 1
 
+def square(row, column, size, color):
+    for i in range(size):
+        draw_row(row+i, column, size, color)
+
 def main():
     initialize()
-    draw_row(5, 4, 8)
+    #draw_row(5, 4, 8, "red")
+    turtle.tracer(0)
+    square(4, 5, 8, "green")
     input()
 
 main()
