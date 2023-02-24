@@ -1,10 +1,9 @@
 '''
-    5.11-14 lecture
+    5.11-16 lecture
     command while in unit5: python files.py
 
     Author: Sam Sit
 '''
-
 
 def numbers():
     filename = "init"
@@ -34,7 +33,25 @@ def sum(filename):
                 print("Skipping non-numeric data:", line.strip())
     return sum
 
-def main():
-    numbers()
+def division():
+    while True:
+        try:
+            num = input("Enter a numerator: ")
+            if num == "":
+                break
+            num = float(num)
+            den = input("Enter a denominator: ")
+            if den == "":
+                break
+            den = float(den)
+            print(num/den)
+        except ZeroDivisionError:
+            print("Can't divide by 0.")
+        except ValueError:
+            print("Non-numeric value entered.")
+            
 
+def main():
+    #numbers()
+    division()
 main()
