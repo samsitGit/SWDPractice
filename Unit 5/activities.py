@@ -1,5 +1,5 @@
 '''
-    5.11 lecture
+    5.11-12 lecture
     command while in unit5: python files.py
 
     Author: Sam Sit
@@ -13,9 +13,12 @@ def numbers():
         filename = input("Enter filename: ")
         if filename == "":
             break
-        result = sum(filename)
-        print("Sum of numbers:", result)
-        totalSum += result
+        try:
+            result = sum(filename)
+            print("Sum of numbers:", result)
+            totalSum += result
+        except:
+            print("File does not exist:", filename)
     print("Total sum:", totalSum)
 
 def sum(filename):
