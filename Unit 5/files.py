@@ -10,6 +10,7 @@
 
     Author: Sam Sit
 '''
+
 #5.2-5.3
 def print_lines(filename):
     #file = open(filename)
@@ -93,6 +94,10 @@ def average(filename, field):
         #challenge
         print(flSplit[field], "average:", sum/count)
             
+#5.8
+import plotter
+def plot_grades(filename, column):
+    print()
 
 def main():
     #5.2
@@ -105,6 +110,9 @@ def main():
     #5.6
     #print_names("data/grades_010.csv")
     #5.7
-    average("data/grades_010.csv", 2)
-    average("data/grades_363.csv", 11)
+    #average("data/grades_010.csv", 2)
+    #average("data/grades_363.csv", 11)
+    #5.8
+    plot_grades("data/grades_010.csv", 2)
+
 main()
