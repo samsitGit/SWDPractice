@@ -1,5 +1,5 @@
 '''
-    5.11-16 lecture
+    5.11-17 lecture
     command while in unit5: python files.py
 
     Author: Sam Sit
@@ -50,8 +50,17 @@ def division():
         except ValueError:
             print("Non-numeric value entered.")
             
+def password():
+    password = input("Enter password: ")
+    if len(password)>20 or len(password)<10:
+        raise ValueError("Password must be in between 10 and 20 characters.")
+    confirmPass = input("Confirm password: ")
+    if password != confirmPass:
+        raise ValueError("Passwords must match!")
 
 def main():
     #numbers()
-    division()
+    #division()
+    password()
+
 main()
