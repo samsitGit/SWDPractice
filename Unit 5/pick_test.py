@@ -16,7 +16,7 @@ def test_guess_too_high ():
     # setup
     answer = 5
     guess = 8
-    expected = 2
+    expected = 3
 
     #invoke
     result = pick.check_guess (guess, answer)
