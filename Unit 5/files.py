@@ -96,8 +96,30 @@ def average(filename, field):
             
 #5.8
 import plotter
+def plot_something():
+    plotter.init("My Graph", "X-Axis", "Y-Axis")
+    plotter.add_data_point(100)
+    plotter.add_data_point(25)
+    plotter.add_data_point(37)
+    plotter.new_series()
+    plotter.add_data_point(75)
+    plotter.add_data_point(65)
+    plotter.add_data_point(100)
+    plotter.plot()
+    input("press enter to continue...")
+
 def plot_grades(filename, column):
-    print()
+    plotter.init("My Graph", "X-Axis", "Y-Axis")
+    with open(filename) as file:
+        next(file)
+        count = 0
+        for line in file:
+            split = line.split(",")
+            plotter.add_data_point(split[column])
+            count += 1
+    plotter.new_series()
+    plotter.plot
+    input("press enter to continue...")
 
 def main():
     #5.2
@@ -113,6 +135,7 @@ def main():
     #average("data/grades_010.csv", 2)
     #average("data/grades_363.csv", 11)
     #5.8
+    #plot_something()
     plot_grades("data/grades_010.csv", 2)
 
 main()
