@@ -73,13 +73,26 @@ def print_names(filename):
     file.close()
 
 #5.7
-def print_names(filename):
-    file = open(filename)
-    next(file)
-    for line in file:
-        split =  line.split(",")
-        print(split[1], split[0])
-    file.close()
+def average(filename, field):
+    with open(filename) as file:
+        next(file)
+        sum = 0
+        count = 0
+        for line in file:
+            split = line.split(",")
+            sum += float(split[field])
+            count += 1
+        #print("average:", sum/count)
+    
+        with open(filename) as file:
+            firstLine = ""
+            for line in file:
+                firstLine = line
+                flSplit = firstLine.split(",")
+                break
+        #challenge
+        print(flSplit[field], "average:", sum/count)
+            
 
 def main():
     #5.2
@@ -92,4 +105,6 @@ def main():
     #5.6
     #print_names("data/grades_010.csv")
     #5.7
+    average("data/grades_010.csv", 2)
+    average("data/grades_363.csv", 11)
 main()
