@@ -1,6 +1,6 @@
 '''
-    5.11-18 lecture
-    command while in unit5: python files.py
+    5.11-19 lecture
+    command while in unit5: python activities.py
 
     Author: Sam Sit
 '''
@@ -64,9 +64,19 @@ def password():
     if password != confirmPass:
         raise ValueError("Passwords must match!")
 
+def exponent(base, power):
+    originalBase = base
+    for i in range(power-1):
+        base = base * originalBase
+    print(base)
+    return(base)
+
 def main():
     #numbers()
-    division()
+    #division()
     #password()
+    exponent(5, 3)
+    exponent(2, 4)
+    exponent(3, 3)
 
 main()
