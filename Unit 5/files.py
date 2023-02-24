@@ -109,8 +109,17 @@ def plot_something():
     input("press enter to continue...")
 
 def plot_grades(filename, column):
-    plotter.init("My Graph", "X-Axis", "Y-Axis")
+    #challenge
+    with open(filename) as file:
+        firstLine = ""
+        for line in file:
+            firstLine = line
+            flSplit = firstLine.split(",")
+            break
     
+    #plotter.init("My Graph", "X-Axis", "Y-Axis")
+    plotter.init(flSplit[column], "Students", "Grades")
+
     with open(filename) as file:
         next(file)
         for line in file:
