@@ -1,9 +1,10 @@
 '''
-    5.11-12 lecture
+    5.11-14 lecture
     command while in unit5: python files.py
 
     Author: Sam Sit
 '''
+
 
 def numbers():
     filename = "init"
@@ -17,15 +18,20 @@ def numbers():
             result = sum(filename)
             print("Sum of numbers:", result)
             totalSum += result
-        except:
+        except FileNotFoundError:
             print("File does not exist:", filename)
+        #except ValueError:
+        #    print("File contains non-numeric data")
     print("Total sum:", totalSum)
 
 def sum(filename):
     sum = 0
     with open(filename) as file:
         for line in file:
-            sum += int(line)
+            try:
+                sum += int(line)
+            except ValueError:
+                print("Skipping non-numeric data:", line.strip())
     return sum
 
 def main():
