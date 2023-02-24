@@ -66,7 +66,7 @@ def password():
 
 def exponent(base, power):
     if power < 0:
-        raise ValueError("Power must not be negative:", power)
+        raise ValueError("Power must not be negative: " + str(power))
     originalBase = base
     for i in range(power-1):
         base = base * originalBase
@@ -80,6 +80,7 @@ def main():
     #exponent(5, 3)
     #exponent(2, 4)
     #exponent(3, 3)
-    exponent(3, -1)
+    #exponent(3, -1)
+    print()
 
 main()
