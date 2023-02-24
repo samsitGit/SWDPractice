@@ -1,5 +1,5 @@
 '''
-    5.11-17 lecture
+    5.11-18 lecture
     command while in unit5: python files.py
 
     Author: Sam Sit
@@ -34,6 +34,7 @@ def sum(filename):
     return sum
 
 def division():
+    numAttempts = 3
     while True:
         try:
             num = input("Enter a numerator: ")
@@ -47,8 +48,13 @@ def division():
             print(num/den)
         except ZeroDivisionError:
             print("Can't divide by 0.")
-        except ValueError:
-            print("Non-numeric value entered.")
+        except ValueError as ve:
+            numAttempts -= 1
+            if numAttempts > 0:
+                print("Invalid.", numAttempts, "attempts remaining")
+            else:
+                raise ve
+#            print("Non-numeric value entered.")
             
 def password():
     password = input("Enter password: ")
@@ -60,7 +66,7 @@ def password():
 
 def main():
     #numbers()
-    #division()
-    password()
+    division()
+    #password()
 
 main()
