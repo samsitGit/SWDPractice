@@ -110,15 +110,15 @@ def plot_something():
 
 def plot_grades(filename, column):
     plotter.init("My Graph", "X-Axis", "Y-Axis")
+    
     with open(filename) as file:
         next(file)
-        count = 0
         for line in file:
             split = line.split(",")
-            plotter.add_data_point(split[column])
-            count += 1
-    plotter.new_series()
-    plotter.plot
+            number = int(split[column])
+            plotter.add_data_point(number)
+    
+    plotter.plot()
     input("press enter to continue...")
 
 def main():
