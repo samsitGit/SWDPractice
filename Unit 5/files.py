@@ -65,7 +65,21 @@ def longest_words(filename):
 
 #5.6
 def print_names(filename):
+    file = open(filename)
+    next(file)
+    for line in file:
+        split =  line.split(",")
+        print(split[1], split[0])
+    file.close()
 
+#5.7
+def print_names(filename):
+    file = open(filename)
+    next(file)
+    for line in file:
+        split =  line.split(",")
+        print(split[1], split[0])
+    file.close()
 
 def main():
     #5.2
@@ -76,5 +90,6 @@ def main():
     #longest_word("ham and spam")
     #longest_words("data/alice.txt")
     #5.6
-    print_names("data/grades_010.csv")
+    #print_names("data/grades_010.csv")
+    #5.7
 main()
