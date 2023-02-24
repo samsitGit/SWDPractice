@@ -1,12 +1,6 @@
 '''
-    5.2, 5.3 lecture
+    5.2-5.9 lecture
     command while in unit5: python files.py
-
-    worked on split, try except, plotting, open/close files, with as,
-    raise errors, re raising errors,
-
-    problems: word search, find longest word, parse csv, 
-    calculate average, etc
 
     Author: Sam Sit
 '''
