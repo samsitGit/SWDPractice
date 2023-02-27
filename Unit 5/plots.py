@@ -16,11 +16,15 @@ def main():
     while True:
         command = input(">> ")
         tokens = command.split()
-        if tokens[0] == "quit":
-            if(quit()):
-                break
+        try:
+            if tokens[0] == "quit":
+                if(quit()):
+                    break
+        except IndexError:
+            print("Enter a command or 'quit' to quit.")
+            
     print("Goodbye!")
-    
+
     #quit()
     
 main()
