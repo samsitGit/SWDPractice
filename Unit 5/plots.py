@@ -13,6 +13,14 @@ def quit():
 
 
 def main():
-    quit()
+    while True:
+        command = input(">> ")
+        tokens = command.split()
+        if tokens[0] == "quit":
+            if(quit()):
+                break
+    print("Goodbye!")
+    
+    #quit()
     
 main()
