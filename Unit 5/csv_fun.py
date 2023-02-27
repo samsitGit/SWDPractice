@@ -1,5 +1,5 @@
 '''
-    5.21-22 lecture
+    5.21-23 lecture
 
     Author: Sam Sit
 '''
@@ -26,9 +26,16 @@ def name_and_addresses(filename):
             #print("name:", tokens[0], "address:", tokens[1])
             print("name:", line[0], "address:", line[1])
 
+def first_only(filename):
+    with open(filename) as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)
+        for line in csv_reader:
+            print(line[0])
 def main():
     #filename = input("Enter a file name: ")
     #print(opener(filename))
-    name_and_addresses("data/full_grades_010.csv")
+    #name_and_addresses("data/full_grades_010.csv")
+    first_only("data/full_grades_010.csv")
 
 main()
