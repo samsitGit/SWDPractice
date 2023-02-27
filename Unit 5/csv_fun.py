@@ -1,5 +1,5 @@
 '''
-    5.21-26 lecture
+    5.21-29 lecture
 
     Author: Sam Sit
 '''
