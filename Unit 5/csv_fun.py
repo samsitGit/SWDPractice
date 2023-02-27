@@ -1,5 +1,5 @@
 '''
-    5.21-23 lecture
+    5.21-26 lecture
 
     Author: Sam Sit
 '''
@@ -32,10 +32,31 @@ def first_only(filename):
         next(csv_reader)
         for line in csv_reader:
             print(line[0])
+
+def average(filename, col):
+    with open(filename) as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)
+        sum = 0
+        count = 0
+        for line in csv_reader:
+            number = 0
+            try:
+                number = float(line[int(col)])
+            except:
+                continue
+            sum += number
+            count += 1
+        return sum/count
 def main():
     #filename = input("Enter a file name: ")
     #print(opener(filename))
     #name_and_addresses("data/full_grades_010.csv")
-    first_only("data/full_grades_010.csv")
+    #first_only("data/full_grades_010.csv")
+    #col = 3
+    for col in range(3, 29):
+        result = average("data/full_grades_010.csv", col)
+        print(col, "average:", result)
+    
 
 main()
