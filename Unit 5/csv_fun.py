@@ -48,15 +48,31 @@ def average(filename, col):
             sum += number
             count += 1
         return sum/count
+
+import re
+
+def zip_check(filename):
+    with open(filename) as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)
+        for line in csv_reader:
+            #line[1].split()[-1][0]
+            regex = "[7-9]{1}\d{4}"
+            if re.findall(regex, line[1]):
+                #print(line[1])
+                print(line[0])
+
 def main():
     #filename = input("Enter a file name: ")
     #print(opener(filename))
     #name_and_addresses("data/full_grades_010.csv")
     #first_only("data/full_grades_010.csv")
     #col = 3
+    '''
     for col in range(3, 29):
         result = average("data/full_grades_010.csv", col)
         print(col, "average:", result)
-    
+    '''
+    zip_check("data/full_grades_010.csv")
 
 main()
