@@ -33,18 +33,20 @@ def plot_grades(filename, firstname, lastname):
     with open(filename) as file:
         csv_reader = csv.reader(file)
         next(csv_reader)
-        regex = "[" + lastname + "]{" + str(len(lastname)) + "}\w[" + firstname + "]{" + str(len(firstname)) + "}"
+        #regex = "[" + lastname + "]{" + str(len(lastname)) + "}\w[" + firstname + "]{" + str(len(firstname)) + "}"
+        #regex = ".*Lobasso.*Sion.*"
         studentFound = False
         for line in csv_reader:
-            if re.findall(regex, line[0]):
+            #if re.findall(regex, line[0]):
+            if line[0] == lastname and line[1] == firstname:
                 count = 0
                 for number in line:
                     count += 1
-                    if count > 3: #skip first 3 columns
+                    if count > 2: #skip first 2 columns
                         try:
                             plotter.add_data_point(float(number))
-                        except:
-                            continue
+                        except ValueError:
+                            plotter.add_data_point(0)
                 studentFound = True
             else:
                 continue
@@ -72,8 +74,8 @@ def main():
     '''
 
     #quit()
-
+    print(plot_grades("data/grades_010.csv", "Sion", "Lobasso"))
     #print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
-    print(plot_grades("data/full_grades_010.csv", "Carlyne", "Myrman"))
+    #print(plot_grades("data/full_grades_010.csv", "Carlyne", "Myrman"))
     
 main()
