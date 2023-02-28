@@ -37,9 +37,27 @@ def plot_grades(filename, first_name, last_name):
             plotter.plot()
             input("press enter to continue...")
             return True
-        
+
+def get_average(filename, column):
+            
+    with open(filename) as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)
+        sum = 0
+        count = 0
+        for line in csv_reader:
+            try:
+                sum += float(line[column])
+                count += 1
+            except ValueError:
+                continue
+
+    print("average:", sum/count)
+
 def main():
 
-    print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
+    #print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
+    for i in range(3, 30):
+        get_average("data/full_grades_010.csv", i)
     
 main()
