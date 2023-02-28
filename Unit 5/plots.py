@@ -5,7 +5,7 @@
 '''
 
 import plotter
-import re
+#import re
 import csv
 
 def quit():
