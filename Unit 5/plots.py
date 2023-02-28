@@ -28,7 +28,6 @@ def plot_grades(filename, firstname, lastname):
 
     #plotter.init("My Graph", "X-Axis", "Y-Axis")
     #plotter.init(flSplit[0], "Scores", "Grades")
-    plotter.init((firstname + " " + lastname), "Scores", "Grades")
 
     with open(filename) as file:
         csv_reader = csv.reader(file)
@@ -40,6 +39,8 @@ def plot_grades(filename, firstname, lastname):
             #if re.findall(regex, line[0]):
             if line[0] == lastname and line[1] == firstname:
                 count = 0
+                plotter.init((firstname + " " + lastname), "Scores", "Grades")
+                studentFound = True
                 for number in line:
                     count += 1
                     if count > 2: #skip first 2 columns
@@ -47,16 +48,16 @@ def plot_grades(filename, firstname, lastname):
                             plotter.add_data_point(float(number))
                         except ValueError:
                             plotter.add_data_point(0)
-                studentFound = True
+
             else:
                 continue
 
         if studentFound != True:
             return False
-    
-    plotter.plot()
-    input("press enter to continue...")
-    return True
+        else:
+            plotter.plot()
+            input("press enter to continue...")
+            return True
 
 def student_grades(string):
     tokens = string.split(" ")
@@ -77,10 +78,15 @@ def student_grades(string):
     except FileNotFoundError:
         print("No such file:", filename)
     
-
+def help():
+    print("stu <filename> <first name> <last name> - plot student grades")
+    print("cavg <filename> - plot class average")
+    print("avg <filename> <number> - prints the average for the grade item")
+    print("quit - quits")
+    print("help - displays this message")
 
 def main():
-    '''
+    #'''
     while True:
         command = input(">> ")
         tokens = command.split()
@@ -88,17 +94,22 @@ def main():
             if tokens[0] == "quit":
                 if(quit()):
                     break
+            elif tokens[0] == "stu":
+                student_grades(command)
+            elif tokens[0] == "help":
+                help()
         except IndexError:
             print("Enter a command or 'quit' to quit.")
 
     print("Goodbye!")
-    '''
+    #'''
+    #plot_grades("data/grades_010.csv", "asd", "lastname")
 
     #quit()
     #print(plot_grades("data/grades_010.csv", "Sion", "Lobasso"))
     #student_grades("stu data/grades_010.csv Sion Lobasso")
     #student_grades("stu data/grades_010.csv Sion")
-    student_grades("stu data/gradasdasdes_010.csv Sion Lobasso")
+    #student_grades("stu data/gradasdasdes_010.csv Sion Lobasso")
 
     #print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
     #print(plot_grades("data/full_grades_010.csv", "Carlyne", "Myrman"))
