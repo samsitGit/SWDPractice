@@ -58,6 +58,27 @@ def plot_grades(filename, firstname, lastname):
     input("press enter to continue...")
     return True
 
+def student_grades(string):
+    tokens = string.split(" ")
+    try:
+        command = tokens[0]
+        filename = tokens[1]
+        firstname = tokens[2]
+        lastname = tokens[3]
+        if command == "stu":
+            if plot_grades(filename, firstname, lastname):
+                print("Plot finished (window may be hidden).")
+            else:
+                print("Plot failed, (no such student).")
+        else:
+            print("Command should be stu")
+    except IndexError:
+        print("Usage: stu <filename> <first name> <last name>")
+    except FileNotFoundError:
+        print("No such file:", filename)
+    
+
+
 def main():
     '''
     while True:
@@ -74,7 +95,11 @@ def main():
     '''
 
     #quit()
-    print(plot_grades("data/grades_010.csv", "Sion", "Lobasso"))
+    #print(plot_grades("data/grades_010.csv", "Sion", "Lobasso"))
+    #student_grades("stu data/grades_010.csv Sion Lobasso")
+    #student_grades("stu data/grades_010.csv Sion")
+    student_grades("stu data/gradasdasdes_010.csv Sion Lobasso")
+
     #print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
     #print(plot_grades("data/full_grades_010.csv", "Carlyne", "Myrman"))
     
