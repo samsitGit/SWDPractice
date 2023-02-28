@@ -52,12 +52,20 @@ def get_average(filename, column):
             except ValueError:
                 continue
 
-    print("average:", sum/count)
+    return round(sum/count, 2)
+
+def plot_class_averages(filename):
+    plotter.init("Class average", "Grade Item", "Scores")
+    for i in range(3, 30):
+        plotter.add_data_point(float(get_average(filename, i)))
+    plotter.plot()
+                               
 
 def main():
 
     #print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
-    for i in range(3, 30):
-        get_average("data/full_grades_010.csv", i)
-    
+    #print(get_average("data/full_grades_010.csv", 5))
+    plot_class_averages("data/full_grades_010.csv")
+    input()
+
 main()
