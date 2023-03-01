@@ -1,9 +1,10 @@
 '''
-    6.1-2 lecture
+    6.1-5 lecture
 
     Author: Sam Sit
 '''
 import arrays
+import random
 
 def making_arrays():
     print(arrays.Array(5))
@@ -25,6 +26,10 @@ def for_fill(an_array):
         count += 1
     print(an_array)
 
+def roll_the_die(sides):
+    number = random.randint(1, int(sides))
+    print("rolling a " + str(sides) + "-sided die: " + str(number))
+
 def main():
 
     #making_arrays()
@@ -34,5 +39,9 @@ def main():
     while_fill(an_array)
     for_fill(an_array)
 
+    random.seed(1)
+    
+    for i in range(10):
+        roll_the_die(6)
 
 main()
