@@ -18,6 +18,13 @@ def while_fill(an_array):
         i += 1
     print(an_array)
 
+def for_fill(an_array):
+    count = 0
+    for i in range(len(an_array)):
+        an_array[i] = count
+        count += 1
+    print(an_array)
+
 def main():
 
     #making_arrays()
@@ -25,6 +32,7 @@ def main():
     an_array = arrays.Array(10)
     print(an_array)
     while_fill(an_array)
+    for_fill(an_array)
 
 
 main()
