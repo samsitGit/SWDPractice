@@ -32,10 +32,10 @@ def plot_grades(filename, first_name, last_name):
                 continue
 
         if studentFound != True:
+            print("Student not found.")
             return False
         else:
             plotter.plot()
-            input("press enter to continue...")
             return True
 
 def get_average(filename, column):
@@ -65,7 +65,16 @@ def main():
 
     #print(plot_grades("data/full_grades_010.csv", "Sion", "Lobasso"))
     #print(get_average("data/full_grades_010.csv", 5))
-    plot_class_averages("data/full_grades_010.csv")
+    #plot_class_averages("data/full_grades_010.csv")
+    #plot_class_averages("data/full_grades_999.csv")
+
+    plot_grades("data/full_grades_100.csv", "Blake", "Gommer")
+    input("Press enter to continue...")
+    plot_grades("data/full_grades_100.csv", "Vikram", "Coldivar")
+    input("Press enter to continue...")
+    plot_class_averages("data/full_grades_999.csv")
+    input("Press enter to continue...")
+
     input()
 
 main()
