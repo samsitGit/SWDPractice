@@ -1,5 +1,5 @@
 '''
-    6.1-5 lecture
+    6.1-6 lecture
 
     Author: Sam Sit
 '''
@@ -40,7 +40,7 @@ def main():
     for_fill(an_array)
 
     random.seed(1)
-    
+
     for i in range(10):
         roll_the_die(6)
 
