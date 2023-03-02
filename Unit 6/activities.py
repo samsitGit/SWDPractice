@@ -1,10 +1,13 @@
 '''
-    6.1-6 lecture
+    6.1-6, 6.10 lecture
 
     Author: Sam Sit
 '''
 import arrays
 import random
+import time
+import searches
+import arrays_utils
 
 def making_arrays():
     print(arrays.Array(5))
@@ -30,10 +33,19 @@ def roll_the_die(sides):
     number = random.randint(1, int(sides))
     print("rolling a " + str(sides) + "-sided die: " + str(number))
 
+def linear_search_timer(an_array, target):
+    begin = time.perf_counter()
+        
+    searches.linear_search(an_array, target)
+
+    end = time.perf_counter()
+    elapsed = end - begin
+    print("elapsed time:", elapsed)
+
 def main():
 
     #making_arrays()
-
+    '''
     an_array = arrays.Array(10)
     print(an_array)
     while_fill(an_array)
@@ -43,5 +55,9 @@ def main():
 
     for i in range(10):
         roll_the_die(6)
+    '''
+    array = arrays_utils.range_array(1,100)
+    target = 50
+    linear_search_timer(array, target)
 
 main()
