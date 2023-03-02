@@ -1,5 +1,5 @@
 '''
-    6.1-6, 6.11-16 lecture
+    6.1-6, 6.11-19 lecture
 
     Author: Sam Sit
 '''
@@ -97,7 +97,16 @@ def circles(radius, depth):
             circles(radius/2, depth-1)
         result = math.pi*radius*2 + circles(radius/2, depth-1)
         return result
-    
+
+def count_up(n):
+    result = 0
+
+    if n >= 0:
+        result = n + count_up(n-1)
+        print(n)
+        
+    return result
+
 def main():
 
     #making_arrays()
@@ -123,8 +132,9 @@ def main():
     #print(factorial(100))
     #print(factorial(2000))
     #print("sum:", countdown(100000))
-    turtle.tracer(0)
-    print(circles(200, 2))
-    input("enter to cont...")
+    #turtle.tracer(0)
+    #print(circles(200, 2))
+    #input("enter to cont...")
+    print("sum:", count_up(5))
 
 main()
