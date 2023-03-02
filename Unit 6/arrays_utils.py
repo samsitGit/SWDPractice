@@ -1,5 +1,5 @@
 '''
-    6.7 lecture
+    6.7-8 lecture
 
     Author: Sam Sit
 '''
