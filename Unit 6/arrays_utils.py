@@ -17,6 +17,7 @@ def random_array(size, min_value=0, max_value=None):
     return array
 
 def range_array(start, stop, step=1):
+    stop += 1
     a_range = range(start, stop, step)
     a_array = arrays.Array(stop-start)
     count = 0
@@ -29,7 +30,7 @@ def main():
     
     random.seed(1)
 
-    print(random_array(10))
+    #print(random_array(10))
 
     print(range_array(1, 10))
 

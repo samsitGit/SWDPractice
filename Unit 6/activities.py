@@ -42,6 +42,12 @@ def linear_search_timer(an_array, target):
     elapsed = end - begin
     print("elapsed time:", elapsed)
 
+def linear_timer():
+    array = arrays_utils.range_array(1, 10000000)
+    linear_search_timer(array, 1)
+    linear_search_timer(array, 5000000)
+    linear_search_timer(array, 10000000)
+
 def main():
 
     #making_arrays()
@@ -56,8 +62,9 @@ def main():
     for i in range(10):
         roll_the_die(6)
     '''
-    array = arrays_utils.range_array(1,100)
-    target = 50
-    linear_search_timer(array, target)
+    #array = arrays_utils.range_array(1,100)
+    #target = 50
+    #linear_search_timer(array, target)
+    linear_timer()
 
 main()
