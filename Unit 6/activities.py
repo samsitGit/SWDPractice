@@ -84,18 +84,20 @@ def factorial(n):
     return result
 
 def circles(radius, depth):
+    result = 0
     if depth == 0:
         return 0
     if depth == 1:
-        turtle.up()
-        turtle.goto(0,0)
-        turtle.down()
-        turtle.pensize(4)
-        turtle.begin_fill()
         turtle.circle(radius)
-        turtle.end_fill()
-        return (math.pi*radius**2)
-
+        return (math.pi*radius*2)
+    
+    if depth > 1:
+        for i in range(4):
+            turtle.circle(radius, 90)
+            circles(radius/2, depth-1)
+        result = math.pi*radius*2 + circles(radius/2, depth-1)
+        return result
+    
 def main():
 
     #making_arrays()
@@ -121,6 +123,8 @@ def main():
     #print(factorial(100))
     #print(factorial(2000))
     #print("sum:", countdown(100000))
-    circles(1, 1)
+    turtle.tracer(0)
+    print(circles(200, 2))
+    input("enter to cont...")
 
 main()
