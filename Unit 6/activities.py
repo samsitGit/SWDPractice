@@ -1,5 +1,5 @@
 '''
-    6.1-6, 6.11 lecture
+    6.1-6, 6.11-13 lecture
 
     Author: Sam Sit
 '''
@@ -56,10 +56,10 @@ def print_odds(an_array):
         count += 1
 
 def print_odds_rec(an_array, index=0):
-    if(an_array[index] % 2):
-        print(an_array[index], end=" ")
-        index += 1
-        print_odds_rec(an_array)
+    if index < len(an_array):
+        if(an_array[index] % 2):
+            print(an_array[index], end=" ")
+        print_odds_rec(an_array, index+1)
 
 def main():
 
