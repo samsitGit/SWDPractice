@@ -32,7 +32,7 @@ def main():
 
     #print(random_array(10))
 
-    print(range_array(1, 10))
+    #print(range_array(1, 10))
 
 
 main()

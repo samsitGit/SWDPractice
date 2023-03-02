@@ -51,9 +51,15 @@ def linear_timer():
 def print_odds(an_array):
     count = 0
     for i in range(len(an_array)):
-        if(an_array[count] % 2) == False:
+        if(an_array[count] % 2):
             print(an_array[count], end=" ")
         count += 1
+
+def print_odds_rec(an_array, index=0):
+    if(an_array[index] % 2):
+        print(an_array[index], end=" ")
+        index += 1
+        print_odds_rec(an_array)
 
 def main():
 
@@ -73,6 +79,7 @@ def main():
     #target = 50
     #linear_search_timer(array, target)
     #linear_timer()
-    print_odds(array)
+    #print_odds(array)
+    print_odds_rec(array)
 
 main()
