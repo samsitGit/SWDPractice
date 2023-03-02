@@ -1,0 +1,32 @@
+data set = 2, 9, 10, 12, 21, 36, 37, 38, 39, 41, 56, 57, 77, 79, 83, 93, 98
+target = 79
+
+iteration = 0
+start = 0
+end = 16
+mid = 8
+value = 39
+result is lower
+
+iteration = 1
+start = 9
+end = 16
+mid = 12
+value = 77
+result is lower
+
+iteration = 2
+start = 13
+end = 16
+mid = 14
+value =  83
+result is higher
+
+iteration = 3
+start = 13
+end = 14
+mid = 13
+value = 79
+target found
+
+not bothering with second one lol
