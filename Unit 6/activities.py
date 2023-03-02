@@ -68,7 +68,18 @@ def countdown(n):
         print(n)
         result = n + countdown(n-1)
         
-    return (result)
+    return result
+
+def factorial(n):
+    result = 0
+
+    if n > 1:
+        result = n*factorial(n-1)
+
+    if n == 1 or 0:
+        result = 1
+    
+    return result
 
 def main():
 
@@ -90,6 +101,9 @@ def main():
     #linear_timer()
     #print_odds(array)
     #print_odds_rec(array)
-    print("sum:", countdown(5))
+    #print("sum:", countdown(5))
+    #print(factorial(10))
+    print(factorial(100))
+    #print(factorial(2000))
 
 main()
