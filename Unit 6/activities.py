@@ -61,6 +61,15 @@ def print_odds_rec(an_array, index=0):
             print(an_array[index], end=" ")
         print_odds_rec(an_array, index+1)
 
+def countdown(n):
+    result = 0
+
+    if n >= 0:
+        print(n)
+        result = n + countdown(n-1)
+        
+    return (result)
+
 def main():
 
     #making_arrays()
@@ -75,11 +84,12 @@ def main():
     for i in range(10):
         roll_the_die(6)
     '''
-    array = arrays_utils.range_array(1,100)
+    #array = arrays_utils.range_array(1,100)
     #target = 50
     #linear_search_timer(array, target)
     #linear_timer()
     #print_odds(array)
-    print_odds_rec(array)
+    #print_odds_rec(array)
+    print("sum:", countdown(5))
 
 main()
