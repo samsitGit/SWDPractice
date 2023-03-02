@@ -1,5 +1,5 @@
 '''
-    6.1-6, 6.11-13 lecture
+    6.1-6, 6.11-16 lecture
 
     Author: Sam Sit
 '''
@@ -103,7 +103,8 @@ def main():
     #print_odds_rec(array)
     #print("sum:", countdown(5))
     #print(factorial(10))
-    print(factorial(100))
+    #print(factorial(100))
     #print(factorial(2000))
+    print("sum:", countdown(100000))
 
 main()
