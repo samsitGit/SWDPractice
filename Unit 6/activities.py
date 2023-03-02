@@ -1,5 +1,5 @@
 '''
-    6.1-6, 6.10 lecture
+    6.1-6, 6.11 lecture
 
     Author: Sam Sit
 '''
@@ -48,6 +48,13 @@ def linear_timer():
     linear_search_timer(array, 5000000)
     linear_search_timer(array, 10000000)
 
+def print_odds(an_array):
+    count = 0
+    for i in range(len(an_array)):
+        if(an_array[count] % 2) == False:
+            print(an_array[count], end=" ")
+        count += 1
+
 def main():
 
     #making_arrays()
@@ -62,9 +69,10 @@ def main():
     for i in range(10):
         roll_the_die(6)
     '''
-    #array = arrays_utils.range_array(1,100)
+    array = arrays_utils.range_array(1,100)
     #target = 50
     #linear_search_timer(array, target)
-    linear_timer()
+    #linear_timer()
+    print_odds(array)
 
 main()
