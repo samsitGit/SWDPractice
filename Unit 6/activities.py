@@ -8,6 +8,8 @@ import random
 import time
 import searches
 import arrays_utils
+import turtle
+import math
 
 def making_arrays():
     print(arrays.Array(5))
@@ -81,6 +83,19 @@ def factorial(n):
     
     return result
 
+def circles(radius, depth):
+    if depth == 0:
+        return 0
+    if depth == 1:
+        turtle.up()
+        turtle.goto(0,0)
+        turtle.down()
+        turtle.pensize(4)
+        turtle.begin_fill()
+        turtle.circle(radius)
+        turtle.end_fill()
+        return (math.pi*radius**2)
+
 def main():
 
     #making_arrays()
@@ -105,6 +120,7 @@ def main():
     #print(factorial(10))
     #print(factorial(100))
     #print(factorial(2000))
-    print("sum:", countdown(100000))
+    #print("sum:", countdown(100000))
+    circles(1, 1)
 
 main()
