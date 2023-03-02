@@ -16,6 +16,14 @@ def linear_search(an_array, target):
     print("did not find", target)
     return None
 
+def binary_search(an_array, target, start=None, end=None):
+    if start==None:
+        start = 0
+        end = len(an_array)
+
+    if start > end:
+        return None
+
 def main():
     #array = arrays_utils.range_array(1,100)
     #target = 50
