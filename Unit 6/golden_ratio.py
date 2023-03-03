@@ -44,21 +44,36 @@ def print_ratios(array, index = 0):
 
 #6.1.6
 def draw_fibonacci_spiral():
-    turtle.colormode(255)
     size = 12
     array = fill_fibonacci_array(arrays.Array(size))
+
+    #turtle.tracer(0)
+    initialize()
     squares(array, size)
+    initialize()
+    turtle.right(180)
+    circles(array, size)
+
+def initialize():
+    turtle.colormode(255)
+    turtle.up()
+    turtle.goto(-400, -200)
+    turtle.down()
 
 def squares(array, depth):
-    if depth == 0:
-        return 0
-    if depth == 1:
-        square(array[depth], random_color())
     if depth > 1:
         square(array[depth-1], random_color())
         squares(array, depth-1)
 
-#def circles(radius, depth):
+def circles(array, depth):
+    if depth > 1:
+        circle(array[depth-1])
+        circles(array, depth-1)
+
+def circle(size):
+    size *= 5
+    turtle.pensize(3)
+    turtle.circle(size, -90)
 
 def square(size, color):
     size *= 5
@@ -80,14 +95,6 @@ def square(size, color):
     turtle.forward(size)
     turtle.right(90)
     turtle.down()
-
-def circle(x, y, size):
-    turtle.up()
-    turtle.goto(x,y)
-    turtle.down()
-    turtle.pensize(4)
-    turtle.color("blue")
-    turtle.circle(size)
 
 def random_color():
     r = random.randint(0,255)
