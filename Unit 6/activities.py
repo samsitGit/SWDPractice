@@ -107,6 +107,21 @@ def count_up(n):
         
     return result
 
+def binary_search_timer(an_array, target):
+    begin = time.perf_counter()
+        
+    searches.binary_search(an_array, target)
+
+    end = time.perf_counter()
+    elapsed = end - begin
+    print("elapsed time:", elapsed)
+
+def binary_timer():
+    array = arrays_utils.range_array(1, 10000000)
+    binary_search_timer(array, 1)
+    binary_search_timer(array, 5000000)
+    binary_search_timer(array, 10000000)
+
 def main():
 
     #making_arrays()
@@ -136,5 +151,9 @@ def main():
     #print(circles(200, 2))
     #input("enter to cont...")
     print("sum:", count_up(5))
+    print("linear")
+    linear_timer()
+    print("binary")
+    binary_timer()
 
 main()
