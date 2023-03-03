@@ -25,18 +25,37 @@ def fill_fibonacci_array(array, index = 0):
         fill_fibonacci_array(array, index+1)
     return array
 
-def main():
+#6.4
+def print_ratios(array, index = 0):
+    a = array[index]
+    b = array[index+1]
 
+    if index < (len(array)-2):
+
+        try:
+            print(f"{a:>4n} {b:>4n}  {(b/a):.5f}  {((a+b)/b):.5f}")
+            
+        except:
+            print(f"{a:>4n} {b:>4n}  undefined")
+
+        print_ratios(array, index+1)
+
+def main():
+    '''
     #6.1
     n = 9
-    print(fibonacci(n))
+    #print(fibonacci(n))
 
     #6.3
     size = 20
     array = arrays.Array(size)
     print(fill_fibonacci_array(array))
-    
+    '''
 
+    #6.4
+    size = 21
+    array = arrays.Array(size)
+    print_ratios(fill_fibonacci_array(array))
 
 
 main()
