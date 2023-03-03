@@ -1,5 +1,5 @@
 '''
-    6.1-6, 6.11-19 lecture
+    6.1-6, 6.11-19, 6.23 lecture
 
     Author: Sam Sit
 '''
