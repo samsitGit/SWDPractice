@@ -153,3 +153,51 @@ def test_linear_search_25_3_7():
 
     #analyze
     assert result == expected
+
+def test_jump_search_12():
+    # setup
+    array = [3, 5, 6, 8, 12, 17, 22, 25, 31]
+    target = 12
+    expected = 4
+
+    #invoke
+    result = searches.jump_search(array, target)
+
+    #analyze
+    assert result == expected
+
+def test_jump_search_45():
+    # setup
+    array = [3, 5, 6, 8, 12, 17, 22, 25, 31]
+    target = 45
+    expected = None
+
+    #invoke
+    result = searches.jump_search(array, target)
+
+    #analyze
+    assert result == expected
+
+def test_jump_search_6():
+    # setup
+    array = [3, 5, 6, 8, 12, 17, 22, 25, 31]
+    target = 6
+    expected = 2
+
+    #invoke
+    result = searches.jump_search(array, target)
+
+    #analyze
+    assert result == expected
+
+def test_jump_search_25():
+    # setup
+    array = [3, 5, 6, 8, 12, 17, 22, 25, 31]
+    target = 25
+    expected = 7
+
+    #invoke
+    result = searches.jump_search(array, target)
+
+    #analyze
+    assert result == expected
