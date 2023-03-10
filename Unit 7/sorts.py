@@ -23,6 +23,19 @@ def insertion_sort(an_array):
         shift(an_array, i)
     return an_array
 
+def shift_wo_swap(an_array, index):
+    target = an_array[index]
+    target_index = index
+
+    for i in range(1, index):
+        if target < an_array[index-i]:
+            target_index -= 1
+        else:
+            break
+    swap(an_array, index, target_index)
+    return an_array
+
+
 def main():
     #rray = array_utils.range_array(1,10)
     #print(array)
@@ -31,9 +44,13 @@ def main():
     #print(result)
     #print(shift(result, 5))
 
-    random = array_utils.random_array(10)
-    print(random)
-    print(insertion_sort(random))
+    #random = array_utils.random_array(10)
+    #print(random)
+    #print(insertion_sort(random))
+
+    new = [65, 79, 84, 86, 70, 63]
+    print(new)
+    print(shift_wo_swap(new, 4))
     
 
 main()
