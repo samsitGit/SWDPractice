@@ -22,9 +22,6 @@ def binary_search(an_array, target, start=None, end=None):
         start = 0
         end = len(an_array)
 
-    elif start > end:
-        return "test"
-    
     midpoint = (start+end)//2
     mid = an_array[midpoint]
     
