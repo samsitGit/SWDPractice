@@ -16,8 +16,9 @@ def linear_search(an_array, target, start=None, end=None):
     if end == None or end > length:
         end = length
     
-    count = 0
-    for i in range(length):
+    count = start
+
+    for i in range(start, end):
         if an_array[count] == target:
             print("found", target)
             return count
