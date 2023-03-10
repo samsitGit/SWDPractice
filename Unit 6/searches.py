@@ -42,12 +42,33 @@ def binary_search(an_array, target, start=None, end=None):
     elif mid > target:
         return binary_search(an_array, target, start, midpoint-1)
 
+def jump_search(an_array, target):
+    
+    length = len(an_array)
+    block_size = int(length**.5)
+    count = 1
+
+    for i in range(block_size):
+        last_point = block_size * count - 1
+        start_point = block_size * count - block_size
+        last = an_array[last_point]
+        if last == target:
+            return last_point
+        elif last > target:
+            return linear_search(an_array, target, start_point, last_point)
+        elif last < target:
+            count += 1
+
+    print("did not find", target)
+    return None
+
 def main():
     array = arrays_utils.range_array(1,100)
     target = 50
     #print(linear_search(array, target))
     
-    print(binary_search(array, target))
+    #print(binary_search(array, target))
+    print(jump_search(array, target))
     print()
 
 main()
