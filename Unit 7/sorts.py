@@ -18,12 +18,22 @@ def shift(an_array, index):
             break
     return an_array
 
+def insertion_sort(an_array):
+    for i in range(len(an_array)):
+        shift(an_array, i)
+    return an_array
+
 def main():
-    array = array_utils.range_array(1,10)
-    print(array)
+    #rray = array_utils.range_array(1,10)
+    #print(array)
     #print(swap(array, 0, 5))
-    result = swap(array, 0, 5)
-    print(result)
-    print(shift(result, 5))
+    #result = swap(array, 0, 5)
+    #print(result)
+    #print(shift(result, 5))
+
+    random = array_utils.random_array(10)
+    print(random)
+    print(insertion_sort(random))
+    
 
 main()
