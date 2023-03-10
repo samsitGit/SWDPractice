@@ -105,3 +105,4 @@ def test_binary_search_max():
 
     #analyze
     assert result == expected
+

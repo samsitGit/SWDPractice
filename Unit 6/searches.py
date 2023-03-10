@@ -6,9 +6,18 @@
 import arrays
 import arrays_utils
 
-def linear_search(an_array, target):
+def linear_search(an_array, target, start=None, end=None):
+    
+    length = len(an_array)
+
+    if start == None or start < 0:
+        start = 0
+    
+    if end == None or end > length:
+        end = length
+    
     count = 0
-    for i in range(len(an_array)):
+    for i in range(length):
         if an_array[count] == target:
             print("found", target)
             return count
