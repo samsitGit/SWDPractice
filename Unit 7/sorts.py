@@ -10,8 +10,20 @@ def swap(an_array, a, b):
     an_array[b] = temp
     return an_array
 
+def shift(an_array, index):
+    for i in range(index):
+        if an_array[index-i] < an_array[index-i-1]:
+            swap(an_array, index-i, index-i-1)
+        else:
+            break
+    return an_array
+
 def main():
     array = array_utils.range_array(1,10)
-    print(swap(array, 0, 5))
+    print(array)
+    #print(swap(array, 0, 5))
+    result = swap(array, 0, 5)
+    print(result)
+    print(shift(result, 5))
 
 main()
