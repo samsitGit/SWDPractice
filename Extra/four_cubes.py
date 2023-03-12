@@ -1,9 +1,9 @@
 '''
     Spring Break Genshin Impact Puzzle Fun
-    Author: Sam Sit, Edward Riley
+    Authors: Sam Sit, Edward Riley
 '''
 
-import random, json, copy
+import random, copy
 
 '''
     +----+----+
@@ -65,17 +65,18 @@ def brute_solve(array, target):
         attempts, moves, final_arr = random_solve(setup, target)
         
         if attempts < lowestAttempt:
+            epoch = i
             lowestAttempt = attempts
             fastestMoves = moves
 
     if fastestMoves:
-        print(f"Few attempts! {lowestAttempt} The moves were {fastestMoves}")
+        print(f"Few attempts! {lowestAttempt} The moves were {fastestMoves}. Found at the Epoch {epoch}.")
     else:
         print('Failed.')
 
 def main():
     target = [4, 4, 4, 4]
-    setup = [1, 2, 3, 4]
+    setup = [4, 2, 2, 4]
     brute_solve(setup, target)
 
 
