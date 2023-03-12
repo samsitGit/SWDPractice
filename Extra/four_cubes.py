@@ -1,15 +1,23 @@
 '''
-    For fun
-    Author: Sam Sit
+    Spring Break Genshin Impact Puzzle Fun
+    Author: Sam Sit, Edward Riley
 '''
 
-import random
+import random, json, copy
 
 '''
     +----+----+
     | A0 | B1 |
     +----+----+
     | C2 | D3 | 
+    +----+----+
+'''
+
+'''
+    +----+----+
+    | A1 | B2 |
+    +----+----+
+    | C3 | D4 | 
     +----+----+
 '''
 
@@ -35,25 +43,40 @@ def hit(array, index):
 
     return array
 
-def edward_hypothesis_solve():
-    
-    print()
-    
-
-def solve(array, target):
+def random_solve(array, target):
     attempts = 0
-    while True:
+    moves = []
+    
+    while not array == target:
         randInt = random.randint(0, 3)
-        
         hit(array, randInt)
+        moves.append(randInt)
         attempts +=1
+        
+    return attempts, moves, array
 
-        if array == target:
-            return ("Success!", "Took this many attempts:", attempts
+def brute_solve(array, target):
+
+    lowestAttempt = 15
+    fastestMoves = []
+
+    for i in range(500):
+        setup = copy.deepcopy(array) # either this or hardcode setup here
+        attempts, moves, final_arr = random_solve(setup, target)
+        
+        if attempts < lowestAttempt:
+            lowestAttempt = attempts
+            fastestMoves = moves
+
+    if fastestMoves:
+        print(f"Few attempts! {lowestAttempt} The moves were {fastestMoves}")
+    else:
+        print('Failed.')
 
 def main():
-    setup = [1, 2, 3, 4]
     target = [4, 4, 4, 4]
-    print(solve(setup, target))
+    setup = [1, 2, 3, 4]
+    brute_solve(setup, target)
+
 
 main()
