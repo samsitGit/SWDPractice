@@ -3,11 +3,13 @@
     Author: Sam Sit
 '''
 
+import random
+
 '''
     +----+----+
-    | A1 | B2 |
+    | A0 | B1 |
     +----+----+
-    | C3 | D4 | 
+    | C2 | D3 | 
     +----+----+
 '''
 
@@ -21,27 +23,37 @@ def change(array, index):
 def hit(array, index):
     firstSide = 0
     secondSide = 0
-    if index == 1 or index == 4:
-        firstSide = 2
-        secondSide = 3
-    elif index == 3 or index == 2:
+    if index == 0 or index == 3:
         firstSide = 1
-        secondSide = 4
+        secondSide = 2
+    elif index == 1 or index == 2:
+        firstSide = 0
+        secondSide = 3
     array = change(array, index)
     array = change(array, firstSide)
     array = change(array, secondSide)
 
     return array
 
-def solve(array):
-    A = array[0]
-    B = array[1]
-    C = array[2]
-    D = array[3]
+def edward_hypothesis_solve():
+    
+    print()
+    
+
+def solve(array, target):
+    attempts = 0
+    while True:
+        randInt = random.randint(0, 3)
+        
+        hit(array, randInt)
+        attempts +=1
+
+        if array == target:
+            return ("Success!", "Took this many attempts:", attempts
 
 def main():
     setup = [1, 2, 3, 4]
     target = [4, 4, 4, 4]
-    solve(setup, target)
+    print(solve(setup, target))
 
 main()
