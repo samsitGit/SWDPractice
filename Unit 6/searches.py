@@ -4,7 +4,7 @@
     Author: Sam Sit
 '''
 import arrays
-import arrays_utils
+import array_utils
 
 def linear_search(an_array, target, start=None, end=None):
     
