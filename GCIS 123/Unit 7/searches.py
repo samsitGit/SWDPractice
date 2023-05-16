@@ -59,12 +59,12 @@ def binary_search(an_array, target, increasing_comparator, start=None, end=None)
         #     "mid =", mid, "value =", an_array[mid])
         if an_array[mid] == target:
             return mid
-        elif an_array[mid] < target:
+        elif increasing_comparator(an_array[mid], target):
             start = mid + 1
-            return binary_search(an_array, target, start, end)
+            return binary_search(an_array, target, increasing_comparator, start, end)
         else:
             end = mid - 1
-            return binary_search(an_array, target, start, end)
+            return binary_search(an_array, target, increasing_comparator, start, end)
 
 def main():
     '''
@@ -80,11 +80,18 @@ def main():
     print(binary_search(new_array, 250))
     print(binary_search(new_array, 500))
     print(binary_search(new_array, 750))
-    '''
+    #7.11
     print(increasing_comparator(1, 2))
     print(increasing_comparator(2, 1))
     print(decreasing_comparator(1, 2))
     print(decreasing_comparator(2, 1))
+    '''
+    #7.12
+    an_array = array_utils.range_array(1, 10000001)
+    print(binary_search(an_array, 1, increasing_comparator))
+    print(binary_search(an_array, 5000000, increasing_comparator))
+    print(binary_search(an_array, 10000000, increasing_comparator))
+    print(binary_search(an_array, 0, increasing_comparator))
 
 if __name__ == "__main__":
     main()
