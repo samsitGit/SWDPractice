@@ -13,8 +13,14 @@ def evens(n):
             sum += i
     return sum
 
+def runner(function, number):
+    print(function.__name__)
+    result = function(number)
+    print(result)
+
 
 def main():
     print(evens(100))
+    runner(evens, 100)
 
 main()
