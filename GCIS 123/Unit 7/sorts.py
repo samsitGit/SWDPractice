@@ -72,6 +72,7 @@ def main():
     #print(shift_wo_swap(new, 4))
 
     random = array_utils.random_array(10)
+    print("random size 10 array test")
     print(random)
     print(insertion_sort_wo_swap(random))
 
