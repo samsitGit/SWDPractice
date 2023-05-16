@@ -93,5 +93,11 @@ def main():
     print(binary_search(an_array, 10000000, increasing_comparator))
     print(binary_search(an_array, 0, increasing_comparator))
 
+    an_array = array_utils.range_array(10000000, 0, -1)
+    print(binary_search(an_array, 1, decreasing_comparator))
+    print(binary_search(an_array, 5000000, decreasing_comparator))
+    print(binary_search(an_array, 10000000, decreasing_comparator))
+    print(binary_search(an_array, 0, decreasing_comparator))
+
 if __name__ == "__main__":
     main()
