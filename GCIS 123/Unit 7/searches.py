@@ -1,5 +1,6 @@
 import arrays
 import array_utils
+import sorts
 
 def linear_search(an_array, target):
     """
@@ -37,6 +38,13 @@ def main():
     print(binary_search(an_array, 5000000))
     print(binary_search(an_array, 10000000))
     print(binary_search(an_array, 0))
+    #7.10
+    new_array = array_utils.range_array(1, 1000)
+    new_array = sorts.insertion_sort_reverse(new_array)
+    print(binary_search(new_array, 50))
+    print(binary_search(new_array, 250))
+    print(binary_search(new_array, 500))
+    print(binary_search(new_array, 750))
 
 if __name__ == "__main__":
     main()
