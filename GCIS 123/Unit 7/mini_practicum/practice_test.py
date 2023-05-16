@@ -1,5 +1,5 @@
 import arrays
-import practice
+#import practice
 
 """
 Part 1 Tests
