@@ -1,6 +1,7 @@
 '''
     7.15 Lecture
     Author: Sam Sit
+    ex. python -m pytest -s .\pixart_test.py::test_checkers
 '''
 
 import array_utils
