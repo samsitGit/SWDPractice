@@ -14,19 +14,18 @@ def insertion_sort_function_timer(an_array):
     elapsed = end - begin
     print("elapsed time:", elapsed)
 
-def binary_timer():
-    array = arrays_utils.range_array(1, 10000000)
-    binary_search_timer(array, 1)
-    binary_search_timer(array, 5000000)
-    binary_search_timer(array, 10000000)
-
-
 def main():
     #sorted already
     array1 = array_utils.range_array(1, 3000)
+    #insertion_sort_function_timer(array1)
     #random elements
-    array2 = array_utils.range_array(1, 3000)
+    array2 = array_utils.random_array(3000)
+    #insertion_sort_function_timer(array2)
     #sorted reversely
-    array3 = array_utils.range_array(1, 3000)
+    array3 = array_utils.range_array(1, 100)
+    array3 = sorts.insertion_sort_reverse(array3)
+    print(array3)
+
+    #insertion_sort_function_timer(array3)
 
 main()

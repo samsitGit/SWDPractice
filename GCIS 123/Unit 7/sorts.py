@@ -42,6 +42,18 @@ def insertion_sort_wo_swap(an_array):
         shift_wo_swap(an_array, i)
     return an_array
 
+def shiftOpposite(an_array, index):
+    for i in range(index):
+        if an_array[index-i] > an_array[index-i-1]:
+            swap(an_array, index-i, index-i-1)
+        else:
+            break
+    return an_array
+
+def insertion_sort_reverse(an_array):
+    for i in range(len(an_array)):
+        shiftOpposite(an_array, i)
+    return an_array
 
 def main():
     #rray = array_utils.range_array(1,10)
