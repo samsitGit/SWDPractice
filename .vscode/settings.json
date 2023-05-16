@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "GCIS 123"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
