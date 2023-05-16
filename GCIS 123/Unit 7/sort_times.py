@@ -17,15 +17,13 @@ def insertion_sort_function_timer(an_array):
 def main():
     #sorted already
     array1 = array_utils.range_array(1, 3000)
-    #insertion_sort_function_timer(array1)
+    insertion_sort_function_timer(array1)
     #random elements
     array2 = array_utils.random_array(3000)
-    #insertion_sort_function_timer(array2)
+    insertion_sort_function_timer(array2)
     #sorted reversely
-    array3 = array_utils.range_array(1, 100)
+    array3 = array_utils.range_array(1, 3000)
     array3 = sorts.insertion_sort_reverse(array3)
-    print(array3)
-
-    #insertion_sort_function_timer(array3)
+    insertion_sort_function_timer(array3)
 
 main()
