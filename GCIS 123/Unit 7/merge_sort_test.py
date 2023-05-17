@@ -54,3 +54,28 @@ def test_split():
     print(result2)
     assert result1 == expected1
     assert result2 == expected2
+
+#7.20
+def test_merge1():
+    #set up
+
+    expected1 = arrays.Array(1)
+    expected1[0] = array[0]
+    expected1[1] = array[2]
+    expected1[2] = array[4]
+    expected1[3] = array[6]
+    expected1[4] = array[8]
+    expected2 = arrays.Array(1)
+    expected2[0] = array[1]
+    expected2[1] = array[3]
+    expected2[2] = array[5]
+    expected2[3] = array[7]
+
+    #invoke
+    result1, result2 = merge_sort.split(array)
+
+    #analyze
+    print(result1)
+    print(result2)
+    assert result1 == expected1
+    assert result2 == expected2
