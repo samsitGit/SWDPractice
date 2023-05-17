@@ -53,7 +53,6 @@ def merge(sorted1, sorted2):
             i += 1
     while i2 < len(sorted2):
         for e in range(i2, len(sorted2)):
-            print("b")
             result[i] = sorted2[i2]
             i2 += 1
             i += 1
