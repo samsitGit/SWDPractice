@@ -70,3 +70,4 @@ def test_merge1():
 
     #analyze
     assert result == expected
+

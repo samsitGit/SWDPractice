@@ -36,22 +36,27 @@ def merge(sorted1, sorted2):
 
     i1 = 0
     i2 = 0
+    i = 0
 
     while i1 < len(sorted1) and i2 < len(sorted2):
         if sorted1[i1] <= sorted2[i2]:
-            result[i1] = sorted1[i1]
+            result[i] = sorted1[i1]
             i1 += 1
         else:
-            result[i2] = sorted2[i2]
+            result[i] = sorted2[i2]
             i2 += 1
-    if i1 < len(sorted1):
-        for i in range(i1, len(sorted1)):
-            result[i1] = sorted1[i1]
+        i+=1
+    while i1 < len(sorted1):
+        for e in range(i1, len(sorted1)):
+            result[i] = sorted1[i1]
             i1 += 1
-    elif i2 < len(sorted2):
-        for i in range(i2, len(sorted2)):
-            result[i2] = sorted1[i2]
+            i += 1
+    while i2 < len(sorted2):
+        for e in range(i2, len(sorted2)):
+            print("b")
+            result[i] = sorted2[i2]
             i2 += 1
+            i += 1
     return result
 
 def main():
