@@ -28,9 +28,33 @@ def split(an_array):
 
     return evens, odds
 
+def merge(sorted1, sorted2):
+    result = arrays.Array()
+
+    i1 = 0
+    i2 = 0
+
+    while i1 < len(sorted1) and i2 < len(sorted2):
+        if sorted1[i1] <= sorted2[i2]:
+            result[i1] = sorted1[i1]
+            i1 += 1
+        else:
+            result[i2] = sorted2[i2]
+            i2 += 1
+    if i1 < len(sorted1):
+        for i in range(i1, len(sorted1)):
+            result[i1] = sorted1[i1]
+            i1 += 1
+    elif i2 < len(sorted2):
+        for i in range(i2, len(sorted2)):
+            result[i2] = sorted1[i2]
+            i2 += 1
+    return result
+
 def main():
 
-    an_array = array_utils.range_array(0, 10)
-    print(split(an_array))
+    #an_array = array_utils.range_array(0, 10)
+    #print(split(an_array))
+    print()
 
 main()
