@@ -29,7 +29,10 @@ def split(an_array):
     return evens, odds
 
 def merge(sorted1, sorted2):
-    result = arrays.Array()
+
+    length = len(sorted1) + len(sorted2)
+
+    result = arrays.Array(length)
 
     i1 = 0
     i2 = 0
