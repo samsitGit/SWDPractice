@@ -91,3 +91,24 @@ def test_merge2():
 
     #analyze
     assert result == expected
+
+def test_merge3():
+    #set up
+
+    sorted1 = arrays.Array(2)
+    sorted1[0] = 1
+    sorted1[1] = 3
+    sorted2 = arrays.Array(2)
+    sorted2[0] = 2
+    sorted2[1] = 4
+    expected = arrays.Array(4)
+    expected[0] = 1
+    expected[1] = 2
+    expected[2] = 3
+    expected[3] = 4
+
+    #invoke
+    result = merge_sort.merge(sorted1, sorted2)
+
+    #analyze
+    assert result == expected
