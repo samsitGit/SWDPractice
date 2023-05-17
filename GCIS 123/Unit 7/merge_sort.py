@@ -9,6 +9,12 @@ import array_utils
 def merge_sort(an_array):
     if len(an_array) < 2:
         return an_array
+    else:
+        half1, half2 = split(an_array)
+        sorted1 = merge_sort(half1)
+        sorted2 = merge_sort(half2)
+        return merge(sorted1, sorted2)
+
 
 def split(an_array):
     total = len(an_array)
