@@ -116,7 +116,7 @@ def test_merge3():
     assert result == expected
 
 #7.22
-def test_merge3():
+def test_merge_sort1():
     #set up
 
     unsorted = arrays.Array(2)
@@ -131,3 +131,22 @@ def test_merge3():
 
     #analyze
     assert result == expected
+
+def test_merge_sort2():
+    #set up
+
+    unsorted = arrays.Array(3)
+    unsorted[0] = 4
+    unsorted[1] = 2
+    unsorted[2] = 5
+    expected = arrays.Array(3)
+    expected[0] = 2
+    expected[1] = 4
+    expected[2] = 5
+
+    #invoke
+    result = merge_sort.merge_sort(unsorted)
+
+    #analyze
+    assert result == expected
+    
