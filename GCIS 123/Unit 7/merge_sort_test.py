@@ -149,4 +149,28 @@ def test_merge_sort2():
 
     #analyze
     assert result == expected
+
+def test_merge_sort2():
+    #set up
+
+    sorted = arrays.Array(6)
+    sorted[0] = 1
+    sorted[1] = 2
+    sorted[2] = 4
+    sorted[3] = 7
+    sorted[4] = 8
+    sorted[5] = 11
+    expected = arrays.Array(6)
+    expected[0] = 1
+    expected[1] = 2
+    expected[2] = 4
+    expected[3] = 7
+    expected[4] = 8
+    expected[5] = 11
+
+    #invoke
+    result = merge_sort.merge_sort(sorted)
+
+    #analyze
+    assert result == expected
     
