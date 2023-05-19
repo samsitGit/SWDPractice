@@ -32,3 +32,21 @@ def test_quicksort1():
 
     #analyze
     assert result == expected
+
+def test_quicksort2():
+    #set up
+    array = array_utils.random_array(3)
+    array[0] = 3
+    array[1] = 1
+    array[2] = 2
+    expected = array_utils.random_array(3)
+    expected[0] = 1
+    expected[1] = 2
+    expected[2] = 3
+    expected = array
+
+    #invoke
+    result = quicksort.quicksort(array)
+
+    #analyze
+    assert result == expected
