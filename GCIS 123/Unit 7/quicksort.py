@@ -1,6 +1,8 @@
 '''
     7.25 Lecture
     Author: Sam Sit
+    skipping next lectures as it seems to be duplicates
+    then the same old tests
 '''
 
 import arrays
