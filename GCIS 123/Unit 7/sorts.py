@@ -75,5 +75,6 @@ def main():
     print("random size 10 array test")
     print(random)
     print(insertion_sort_wo_swap(random))
+    print("end sorts.py import")
 
 main()
