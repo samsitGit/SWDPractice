@@ -43,7 +43,6 @@ def test_quicksort2():
     expected[0] = 1
     expected[1] = 2
     expected[2] = 3
-    expected = array
 
     #invoke
     result = quicksort.quicksort(array)
