@@ -22,23 +22,36 @@ def sort_col(filepath, i_col, size):
 #2
 def insertion_sort_backwards(an_array):
     unsorted = an_array
-    count = len(an_array)-1
+
+    sorted = arrays.Array(0)
+
+    index = len(an_array)-1
     result = an_array
+
     for i in range(len(an_array)):
-        sorted = arrays.Array(i+1)
-        unsorted[count] = sorted[0]
-        shift_backwards(sorted, i)
-        count -= 1
+        #rightmost unsorted go to leftmost sorted
+        temp = arrays.Array(1)
+        temp[0] = unsorted[index]
+        print(temp)
+        sorted = cat(temp, sorted)
+        temp = arrays.Array(index)
+        for i in range(index):
+            temp[i] = unsorted[i]
+        unsorted = temp
+
+        shift(sorted, i)
+        index -= 1
 
         result = cat(unsorted,sorted)
+        print("unsorted", unsorted, "sorted", sorted)
         print(result)
         
     return result
 
-def shift_backwards(an_array, index):
+def shift(an_array, index):
     for i in range(index):
-        if an_array[index-i-1] > an_array[index-i]:
-            sorts.swap(an_array, index-i-1, index-i)
+        if an_array[index-i] < an_array[index-i-1]:
+            sorts.swap(an_array, index-i, index-i-1)
         else:
             break
     return an_array
