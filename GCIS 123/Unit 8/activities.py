@@ -5,6 +5,7 @@
 
 import arrays
 import array_utils
+import random
 
 def tuples(a_tuple):
     print(len(a_tuple))
@@ -84,7 +85,15 @@ def array_pop(a, i):
     
     return a1
 
+def rgb_tuple():
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    
+    return (r,g,b)
+
 def main():
+    '''
     x = ("a", 123, False)
     y = tuple("abcd")
 
@@ -123,5 +132,10 @@ def main():
     a = array_insert(a, 4, 99)
     print(a)
     print(array_pop(a, 7))
+    '''
+    
+    print(rgb_tuple())
+    print(rgb_tuple())
+    print(rgb_tuple())
 
 main()
