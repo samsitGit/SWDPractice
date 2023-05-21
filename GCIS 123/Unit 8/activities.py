@@ -120,6 +120,15 @@ def slices():
         elif i == len(b)-1:
             e = i
             print(b[s:e])
+
+#instructions in clear
+def dices(a):
+    if len(a) == 0:
+        return False
+    else:
+        for i in range(len(a)):
+            print(a[i])
+            
     
 def main():
     '''
@@ -177,6 +186,9 @@ def main():
     a = list("magic")
     print(reverse_sequence(a))
     '''
-    slices()
+    #slices()
+    a = list("magic wand")
+    dices(a)
+
 
 main()
