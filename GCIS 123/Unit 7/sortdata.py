@@ -32,26 +32,24 @@ def insertion_sort_backwards(an_array):
         #rightmost unsorted go to leftmost sorted
         temp = arrays.Array(1)
         temp[0] = unsorted[index]
-        print(temp)
         sorted = cat(temp, sorted)
         temp = arrays.Array(index)
-        for i in range(index):
-            temp[i] = unsorted[i]
+        for j in range(index):
+            temp[j] = unsorted[j]
         unsorted = temp
 
-        shift(sorted, i)
+        shift_backwards(sorted, 0)
         index -= 1
 
         result = cat(unsorted,sorted)
-        print("unsorted", unsorted, "sorted", sorted)
         print(result)
         
     return result
 
-def shift(an_array, index):
-    for i in range(index):
-        if an_array[index-i] < an_array[index-i-1]:
-            sorts.swap(an_array, index-i, index-i-1)
+def shift_backwards(an_array, index):
+    for i in range(len(an_array)-1):
+        if an_array[index+i] > an_array[index+i+1]:
+            sorts.swap(an_array, index+i, index+i+1)
         else:
             break
     return an_array
@@ -76,7 +74,6 @@ def main():
     array[2] = 7
     array[3] = 4
     array[4] = 1
-    print(array)
-    print(insertion_sort_backwards(array))
+    insertion_sort_backwards(array)
 
 main()
