@@ -3,6 +3,9 @@
     Author: Sam Sit
 '''
 
+import arrays
+import array_utils
+
 def tuples(a_tuple):
     print(len(a_tuple))
     #a_tuple[0] = "b" #wont work
@@ -54,6 +57,20 @@ def popper(a):
         a.pop(0)
         print(a)
 
+def array_insert(a, i, v):
+    a1 = arrays.Array(len(a)+1)
+    over = False
+    for j in range(len(a)+1):
+        if j == i:
+            a1[j] = v
+            over = True
+        elif over:
+            a1[j] = a[j-1]
+        else:
+            a1[j] = a[j]
+    
+    return a1
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -87,5 +104,9 @@ def main():
     print(inserter(a, 4))
 
     popper(a)
+
+    a = array_utils.range_array(0, 10)
+    print(a)
+    print(array_insert(a, 4, 99))
 
 main()
