@@ -23,6 +23,11 @@ def make_list(a_sequence):
         list.append(i)
     return list
 
+def scale(a_list, scalar):
+    for i in range(len(a_list)):
+        a_list[i] *= scalar
+    return a_list
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -33,5 +38,6 @@ def main():
     lists()
 
     print(make_list("test"))
+    print(scale(make_list((5, 20, 2, 4)), 2))
 
 main()
