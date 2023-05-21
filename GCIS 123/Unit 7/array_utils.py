@@ -33,12 +33,14 @@ def random_sorted_array(size, min_value = 0, max_diff = None):
 def cat(a,b):
     lenA=len(a)
     lenB=len(b)
+    total=0
     array=arrays.Array(lenA+lenB)
 
     for i in range(lenA):
         array[i]=a[i]
+        total+=1
 
     for i in range(lenB):
-        array[i]=b[i]
+        array[total]=b[i]
 
     return array

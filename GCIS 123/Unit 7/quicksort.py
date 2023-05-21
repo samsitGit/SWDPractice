@@ -17,20 +17,7 @@ def quicksort(an_array):
         sorted_less = quicksort(less)
         sorted_more = quicksort(more)
 
-        result = arrays.Array(len(less) + len(same) + len(more))
-        resultCount = 0
-        for i in range(len(less)):
-            result[resultCount] = sorted_less[i]
-            resultCount+=1
-
-        for i in range(len(same)):
-            result[resultCount] = same[i]
-            resultCount+=1
-
-        for i in range(len(more)):
-            result[resultCount] = sorted_more[i]
-            resultCount+=1
-
+        result = array_utils.cat(array_utils.cat(sorted_less, same), sorted_more)
         return result
 
 def partition(pivot, an_array):
@@ -74,21 +61,8 @@ def quick_insertion_sort(an_array):
     else:
         pivot = an_array[0]
         less, same, more = partition(pivot, an_array)
-        sorted_less = quicksort(less)
-        sorted_more = quicksort(more)
+        sorted_less = quick_insertion_sort(less)
+        sorted_more = quick_insertion_sort(more)
 
-        result = arrays.Array(len(less) + len(same) + len(more))
-        resultCount = 0
-        for i in range(len(less)):
-            result[resultCount] = sorted_less[i]
-            resultCount+=1
-
-        for i in range(len(same)):
-            result[resultCount] = same[i]
-            resultCount+=1
-
-        for i in range(len(more)):
-            result[resultCount] = sorted_more[i]
-            resultCount+=1
-
+        result = array_utils.cat(array_utils.cat(sorted_less, same), sorted_more)
         return result

@@ -27,7 +27,6 @@ def split(an_array):
 
     for i in range(total):
         if i%2:
-            print(i)
             odds[int(i/2)] = an_array[i]
         else:
             evens[int(i/2)] = an_array[i]
@@ -63,7 +62,7 @@ def merge(sorted1, sorted2):
             i2 += 1
             i += 1
     return result
-
+'''
 def main():
 
     #an_array = array_utils.range_array(0, 10)
@@ -71,3 +70,4 @@ def main():
     print()
 
 main()
+'''

@@ -54,7 +54,7 @@ def insertion_sort_reverse(an_array):
     for i in range(len(an_array)):
         shiftOpposite(an_array, i)
     return an_array
-
+'''
 def main():
     #rray = array_utils.range_array(1,10)
     #print(array)
@@ -78,3 +78,4 @@ def main():
     print("end sorts.py import")
 
 main()
+'''
