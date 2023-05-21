@@ -128,9 +128,19 @@ def dices(a):
     else:
         e = a[0:1]
         print(e)
-        dices(a[1:])
-            
-    
+        dices(a[1:])      
+
+def random_list(s):
+    l = []
+    for i in range(s):
+        l.append(random.randint(0, 100))
+    return l
+
+def sorted_test(a):
+    print(a)
+    b = sorted(a)
+    print(b)
+
 def main():
     '''
     x = ("a", 123, False)
@@ -186,10 +196,11 @@ def main():
 
     a = list("magic")
     print(reverse_sequence(a))
-    '''
-    #slices()
+    
+    slices()
     a = list("magic wand")
     dices(a)
-
+    '''
+    sorted_test(random_list(10))
 
 main()
