@@ -141,6 +141,11 @@ def sorted_test(a):
     b = sorted(a)
     print(b)
 
+def sort_test(a):
+    print(a)
+    a.sort()
+    print(a)
+
 def main():
     '''
     x = ("a", 123, False)
@@ -200,7 +205,9 @@ def main():
     slices()
     a = list("magic wand")
     dices(a)
-    '''
+    
     sorted_test(random_list(10))
+    '''
+    sort_test(random_list(10))
 
 main()
