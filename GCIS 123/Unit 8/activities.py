@@ -1,5 +1,5 @@
 '''
-    8.2 Lecture
+    8.2-3 Lecture
     Author: Sam Sit
 '''
 
@@ -14,6 +14,14 @@ def lists():
     list1[0] = 1 #works
     for i in list1:
         print(i)
+    print(list1)
+    #skip 8.4
+
+def make_list(a_sequence):
+    list = []
+    for i in a_sequence:
+        list.append(i)
+    return list
 
 def main():
     x = ("a", 123, False)
@@ -23,5 +31,7 @@ def main():
     tuples(y)
 
     lists()
+
+    print(make_list("test"))
 
 main()
