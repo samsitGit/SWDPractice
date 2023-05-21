@@ -49,6 +49,11 @@ def inserter(a, v):
     a.insert(i, v)
     return a
 
+def popper(a):
+    for i in range(len(a)):
+        a.pop(0)
+        print(a)
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -80,5 +85,7 @@ def main():
     print(inserter(a, 2))
     print(inserter(a, 3))
     print(inserter(a, 4))
+
+    popper(a)
 
 main()
