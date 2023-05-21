@@ -71,6 +71,19 @@ def array_insert(a, i, v):
     
     return a1
 
+def array_pop(a, i):
+    a1 = arrays.Array(len(a)-1)
+    over = False
+    for j in range(len(a)):
+        if j == i:
+            over = True
+        elif over:
+            a1[j-1] = a[j]
+        else:
+            a1[j] = a[j]
+    
+    return a1
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -107,6 +120,8 @@ def main():
 
     a = array_utils.range_array(0, 10)
     print(a)
-    print(array_insert(a, 4, 99))
+    a = array_insert(a, 4, 99)
+    print(a)
+    print(array_pop(a, 7))
 
 main()
