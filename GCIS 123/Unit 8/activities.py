@@ -92,6 +92,12 @@ def rgb_tuple():
     
     return (r,g,b)
 
+def tuple_equality(a, b):
+    print(a)
+    print(b)
+    print(a is b)
+    print(a == b)
+
 def main():
     '''
     x = ("a", 123, False)
@@ -132,10 +138,17 @@ def main():
     a = array_insert(a, 4, 99)
     print(a)
     print(array_pop(a, 7))
-    '''
     
     print(rgb_tuple())
     print(rgb_tuple())
     print(rgb_tuple())
+    '''
+    a = ["a", 12, True]
+    b = tuple(a)
+    c = tuple(a)
+    d = tuple([12, True, "a"])
+    tuple_equality(a,b)
+    tuple_equality(b,c)
+    tuple_equality(c,d)
 
 main()
