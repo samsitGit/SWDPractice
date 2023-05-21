@@ -7,6 +7,7 @@
 
 import arrays
 import array_utils
+import sorts
 
 def quicksort(an_array):
     if len(an_array) < 2:
@@ -55,14 +56,18 @@ def partition(pivot, an_array):
             scounter += 1
     return less, same, more
 
-def quick_insertion_sort(an_array):
+#7.2.5 hw
+def quick_insertion_sort(an_array, depth = 0):
     if len(an_array) < 2:
         return an_array
+    elif depth > 10:
+        return sorts.insertion_sort(an_array)
     else:
         pivot = an_array[0]
         less, same, more = partition(pivot, an_array)
-        sorted_less = quick_insertion_sort(less)
-        sorted_more = quick_insertion_sort(more)
+        depth += 1
+        sorted_less = quick_insertion_sort(less, depth)
+        sorted_more = quick_insertion_sort(more, depth)
 
         result = array_utils.cat(array_utils.cat(sorted_less, same), sorted_more)
         return result

@@ -77,7 +77,8 @@ def main():
     plotter.init("Insertion, merge, and quick sort", "Array Size", "Time")
     plot_sort_time_using_sorted_arrays(sorts.insertion_sort)
     plot_sort_time_using_sorted_arrays(merge_sort.merge_sort)
-    plot_sort_time_using_sorted_arrays(quicksort.quicksort)
+    #plot_sort_time_using_sorted_arrays(quicksort.quicksort)
+    plot_sort_time_using_sorted_arrays(quicksort.quick_insertion_sort)
     plotter.plot()
     input("Press enter to continue...")
 
