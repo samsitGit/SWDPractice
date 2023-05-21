@@ -40,6 +40,10 @@ def cat(a, b):
     c = a+b
     return c
 
+def extender(a, b):
+    a+=b
+    return a
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -52,11 +56,17 @@ def main():
     print(make_list("test"))
     print(scale(make_list((5, 20, 2, 4)), 2))
     mutater(make_list((2,4,5)),6)
-    
+
     a = make_list("abc")
     b = make_list("de")
     print(a)
     print(b)
     print(cat(a,b))
+
+    a = make_list("abc")
+    b = make_list("de")
+    print(a)
+    print(b)
+    print(extender(a,b))
 
 main()
