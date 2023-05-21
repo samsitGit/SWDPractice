@@ -164,6 +164,9 @@ def suit_key(c):
         key = 4
     return key
 
+def packer():
+    return 1, 2, 3, 4
+
 def main():
     '''
     x = ("a", 123, False)
@@ -236,9 +239,19 @@ def main():
     
     hand = [(10, "D"), (10, "C"), (9, "H"), (6, "D"), (2, "S")]
     sort_cards(hand)
-    '''
+    
     hand = [(10, "D"), (10, "C"), (10, "H"), (10, "S")]
     sort_cards(hand)
-
+    '''
+    packed = packer()
+    print(packed)
+    a = packed[0]
+    b = packed[1]
+    c = packed[2]
+    d = packed[3]
+    print(a)
+    print(b)
+    print(c)
+    print(d)
 
 main()
