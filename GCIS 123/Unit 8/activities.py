@@ -148,8 +148,21 @@ def sort_test(a, b=False):
 
 def sort_cards(h):
     print(h)
-    h.sort()
+    h.sort(key=suit_key)
     print(h)
+
+def suit_key(c):
+    key = 0
+    suit = c[1]
+    if suit == "C":
+        key = 1
+    elif suit == "D":
+        key = 2
+    elif suit == "H":
+        key = 3
+    else:
+        key = 4
+    return key
 
 def main():
     '''
@@ -220,8 +233,11 @@ def main():
     sort_test(a, True)
     sorted_test(a, False)
     sort_test(a, False)
-    '''
+    
     hand = [(10, "D"), (10, "C"), (9, "H"), (6, "D"), (2, "S")]
+    sort_cards(hand)
+    '''
+    hand = [(10, "D"), (10, "C"), (10, "H"), (10, "S")]
     sort_cards(hand)
 
 
