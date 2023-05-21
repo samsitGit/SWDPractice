@@ -44,6 +44,11 @@ def extender(a, b):
     a+=b
     return a
 
+def inserter(a, v):
+    i = int(len(a)/2)
+    a.insert(i, v)
+    return a
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -68,5 +73,12 @@ def main():
     print(a)
     print(b)
     print(extender(a,b))
+
+    a=[]
+    print(inserter(a, 0))
+    print(inserter(a, 1))
+    print(inserter(a, 2))
+    print(inserter(a, 3))
+    print(inserter(a, 4))
 
 main()
