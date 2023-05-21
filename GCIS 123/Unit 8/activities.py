@@ -28,6 +28,14 @@ def scale(a_list, scalar):
         a_list[i] *= scalar
     return a_list
 
+def mutater(a_list, an_int):
+    print(a_list)
+    print(an_int)
+    an_int*=5
+    a_list[0]*=5
+    print(a_list)
+    print(an_int)
+
 def main():
     x = ("a", 123, False)
     y = tuple("abcd")
@@ -39,5 +47,6 @@ def main():
 
     print(make_list("test"))
     print(scale(make_list((5, 20, 2, 4)), 2))
+    mutater(make_list((2,4,5)),6)
 
 main()
