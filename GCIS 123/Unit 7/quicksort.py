@@ -67,9 +67,3 @@ def partition(pivot, an_array):
             same[scounter] = an_array[i]
             scounter += 1
     return less, same, more
-
-def main():
-
-    print()
-
-main()

@@ -49,6 +49,12 @@ def plot_sort_time_using_random_arrays(sort_function):
     plotter.new_series()
     for i in range(len(SIZES)):
         plotter.add_data_point(sort_function_timer(array_utils.random_array(SIZES[i]), sort_function))
+
+def plot_sort_time_using_sorted_arrays(sort_function):
+    plotter.new_series()
+    for i in range(len(SIZES)):
+        plotter.add_data_point(sort_function_timer(array_utils.range_array(0, SIZES[i]), sort_function))
+
 def main():
     '''
     print("now testing with size 3000 arrays")
@@ -60,10 +66,18 @@ def main():
     '''
     #7.2 assignment
     print(SIZES)
-    plotter.init("Insertion and merge sort", "Array Size", "Time")
+    '''
+    plotter.init("Insertion, merge, and quick sort", "Array Size", "Time")
     plot_sort_time_using_random_arrays(sorts.insertion_sort)
     plot_sort_time_using_random_arrays(merge_sort.merge_sort)
     plot_sort_time_using_random_arrays(quicksort.quicksort)
+    plotter.plot()
+    input("Press enter to continue...")
+    '''
+    plotter.init("Insertion, merge, and quick sort", "Array Size", "Time")
+    plot_sort_time_using_sorted_arrays(sorts.insertion_sort)
+    plot_sort_time_using_sorted_arrays(merge_sort.merge_sort)
+    plot_sort_time_using_sorted_arrays(quicksort.quicksort)
     plotter.plot()
     input("Press enter to continue...")
 
