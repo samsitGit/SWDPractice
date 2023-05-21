@@ -67,3 +67,28 @@ def partition(pivot, an_array):
             same[scounter] = an_array[i]
             scounter += 1
     return less, same, more
+
+def quick_insertion_sort(an_array):
+    if len(an_array) < 2:
+        return an_array
+    else:
+        pivot = an_array[0]
+        less, same, more = partition(pivot, an_array)
+        sorted_less = quicksort(less)
+        sorted_more = quicksort(more)
+
+        result = arrays.Array(len(less) + len(same) + len(more))
+        resultCount = 0
+        for i in range(len(less)):
+            result[resultCount] = sorted_less[i]
+            resultCount+=1
+
+        for i in range(len(same)):
+            result[resultCount] = same[i]
+            resultCount+=1
+
+        for i in range(len(more)):
+            result[resultCount] = sorted_more[i]
+            resultCount+=1
+
+        return result

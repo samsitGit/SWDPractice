@@ -29,3 +29,16 @@ def random_sorted_array(size, min_value = 0, max_diff = None):
         value += next_diff
         an_array[i] = value
     return an_array
+
+def cat(a,b):
+    lenA=len(a)
+    lenB=len(b)
+    array=arrays.Array(lenA+lenB)
+
+    for i in range(lenA):
+        array[i]=a[i]
+
+    for i in range(lenB):
+        array[i]=b[i]
+
+    return array
