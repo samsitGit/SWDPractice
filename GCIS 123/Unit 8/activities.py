@@ -98,6 +98,14 @@ def tuple_equality(a, b):
     print(a is b)
     print(a == b)
 
+def reverse_sequence(a):
+    b = []
+
+    for i in range(len(a)):
+        b.append(a[len(a)-i-1])
+    
+    return b
+
 def main():
     '''
     x = ("a", 123, False)
@@ -142,7 +150,7 @@ def main():
     print(rgb_tuple())
     print(rgb_tuple())
     print(rgb_tuple())
-    '''
+    
     a = ["a", 12, True]
     b = tuple(a)
     c = tuple(a)
@@ -150,5 +158,9 @@ def main():
     tuple_equality(a,b)
     tuple_equality(b,c)
     tuple_equality(c,d)
+    '''
+
+    a = list("magic")
+    print(reverse_sequence(a))
 
 main()
