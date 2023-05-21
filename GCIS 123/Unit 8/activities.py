@@ -136,14 +136,14 @@ def random_list(s):
         l.append(random.randint(0, 100))
     return l
 
-def sorted_test(a):
+def sorted_test(a, b=False):
     print(a)
-    b = sorted(a)
+    b = sorted(a, reverse=b)
     print(b)
 
-def sort_test(a):
+def sort_test(a, b=False):
     print(a)
-    a.sort()
+    a.sort(reverse=b)
     print(a)
 
 def main():
@@ -207,7 +207,14 @@ def main():
     dices(a)
     
     sorted_test(random_list(10))
-    '''
+    
     sort_test(random_list(10))
+    '''
+    a = random_list(10)
+    sorted_test(a, True)
+    sort_test(a, True)
+    sorted_test(a, False)
+    sort_test(a, False)
+
 
 main()
