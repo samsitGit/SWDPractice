@@ -126,8 +126,9 @@ def dices(a):
     if len(a) == 0:
         return False
     else:
-        for i in range(len(a)):
-            print(a[i])
+        e = a[0:1]
+        print(e)
+        dices(a[1:])
             
     
 def main():
