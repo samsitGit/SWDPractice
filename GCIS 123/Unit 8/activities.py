@@ -146,6 +146,11 @@ def sort_test(a, b=False):
     a.sort(reverse=b)
     print(a)
 
+def sort_cards(h):
+    print(h)
+    h.sort()
+    print(h)
+
 def main():
     '''
     x = ("a", 123, False)
@@ -209,12 +214,15 @@ def main():
     sorted_test(random_list(10))
     
     sort_test(random_list(10))
-    '''
+    
     a = random_list(10)
     sorted_test(a, True)
     sort_test(a, True)
     sorted_test(a, False)
     sort_test(a, False)
+    '''
+    hand = [(10, "D"), (10, "C"), (9, "H"), (6, "D"), (2, "S")]
+    sort_cards(hand)
 
 
 main()
