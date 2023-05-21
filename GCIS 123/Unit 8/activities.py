@@ -106,6 +106,21 @@ def reverse_sequence(a):
     
     return b
 
+def slices():
+    a = "Somebody once told me the world was gonna roll me."
+    b = list(a)
+    s = 0
+    e = 0
+    for i in range(len(b)):
+        s = e
+        if b[i] == " ":
+            e = i
+            print(b[s:e])
+            e += 1
+        elif i == len(b)-1:
+            e = i
+            print(b[s:e])
+    
 def main():
     '''
     x = ("a", 123, False)
@@ -158,9 +173,10 @@ def main():
     tuple_equality(a,b)
     tuple_equality(b,c)
     tuple_equality(c,d)
-    '''
 
     a = list("magic")
     print(reverse_sequence(a))
+    '''
+    slices()
 
 main()
