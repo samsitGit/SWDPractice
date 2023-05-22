@@ -167,6 +167,16 @@ def suit_key(c):
 def packer():
     return 1, 2, 3, 4
 
+def swapper(a):
+    b = []
+    c = len(a)
+    d = int(c/2)
+    for i in range(d,c):
+        b.append(a[i])
+    for i in range(d):
+        b.append(a[i])
+    return b
+    
 def main():
     '''
     x = ("a", 123, False)
@@ -242,7 +252,7 @@ def main():
     
     hand = [(10, "D"), (10, "C"), (10, "H"), (10, "S")]
     sort_cards(hand)
-    '''
+    
     packed = packer()
     print(packed)
     a = packed[0]
@@ -253,5 +263,14 @@ def main():
     print(b)
     print(c)
     print(d)
+    '''
+    a = []
+    b = [1]
+    c = [1,2,3]
+    d = list("1234567890")
+    print(swapper(a))
+    print(swapper(b))
+    print(swapper(c))
+    print(swapper(d))
 
 main()
