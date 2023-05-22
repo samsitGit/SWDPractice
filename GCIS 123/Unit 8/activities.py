@@ -176,7 +176,12 @@ def swapper(a):
     for i in range(d):
         b.append(a[i])
     return b
-    
+
+def chunky(a, s):
+    for i in range(int(len(a)/s)+1):
+        c = a[i*s:i*s+s]
+        print(c)
+
 def main():
     '''
     x = ("a", 123, False)
@@ -263,7 +268,7 @@ def main():
     print(b)
     print(c)
     print(d)
-    '''
+    
     a = []
     b = [1]
     c = [1,2,3]
@@ -272,5 +277,8 @@ def main():
     print(swapper(b))
     print(swapper(c))
     print(swapper(d))
+    '''
+    d = list("1234567890")
+    chunky(d, 3)
 
 main()
