@@ -3,7 +3,7 @@ import './App.css';
 import { useState } from 'react';
 
 const user = {
-  name: 'Sam Sit',
+  name: 'Legendiac Lawliet',
   imageUrl: 'https://i.imgur.com/mcSbDgQ.jpg',
   imageSize: 90,
 };
@@ -75,6 +75,21 @@ function ShoppingList() {
   );
 }
 
+function Square() {
+  return (
+    <>
+      <button className="square">X</button>
+      <button className="square">X</button>
+      <button className="square">X</button>
+      <button className="square">X</button>
+      <button className="square">X</button>
+      <button className="square">X</button>
+      <button className="square">X</button>
+      <button className="square">X</button>
+    </>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -89,6 +104,7 @@ function App() {
         <p>
           Front page edit
         </p>
+        <Square />
         <MyButton count={count} onClick={handleClick}/>
         <MyButton count={count} onClick={handleClick}/>
         <Profile />
