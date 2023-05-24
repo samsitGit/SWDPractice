@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import Board from './Board/Board.js'
+import Game from './Board/Board.js'
 
 const user = {
   name: 'Legendiac Lawliet',
@@ -90,7 +90,7 @@ function App() {
         <p>
           Front page edit
         </p>
-        <Board />
+        <Game />
         <br></br>
         <MyButton count={count} onClick={handleClick}/>
         <MyButton count={count} onClick={handleClick}/>
