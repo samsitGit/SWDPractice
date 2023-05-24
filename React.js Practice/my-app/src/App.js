@@ -75,17 +75,24 @@ function ShoppingList() {
   );
 }
 
-function Square() {
+function Board() {
   return (
     <>
-      <button className="square">X</button>
-      <button className="square">X</button>
-      <button className="square">X</button>
-      <button className="square">X</button>
-      <button className="square">X</button>
-      <button className="square">X</button>
-      <button className="square">X</button>
-      <button className="square">X</button>
+      <div className="board-row">
+        <button className="square">1</button>
+        <button className="square">2</button>
+        <button className="square">3</button>
+      </div>
+      <div className="board-row">
+        <button className="square">4</button>
+        <button className="square">5</button>
+        <button className="square">6</button>
+      </div>
+      <div className="board-row">
+        <button className="square">7</button>
+        <button className="square">8</button>
+        <button className="square">9</button>
+      </div>
     </>
   )
 }
@@ -104,7 +111,7 @@ function App() {
         <p>
           Front page edit
         </p>
-        <Square />
+        <Board />
         <MyButton count={count} onClick={handleClick}/>
         <MyButton count={count} onClick={handleClick}/>
         <Profile />
