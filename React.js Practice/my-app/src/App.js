@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import Board from './Board/Board.js'
 
 const user = {
   name: 'Legendiac Lawliet',
@@ -75,28 +76,6 @@ function ShoppingList() {
   );
 }
 
-function Board() {
-  return (
-    <>
-      <div className="board-row">
-        <button className="square">1</button>
-        <button className="square">2</button>
-        <button className="square">3</button>
-      </div>
-      <div className="board-row">
-        <button className="square">4</button>
-        <button className="square">5</button>
-        <button className="square">6</button>
-      </div>
-      <div className="board-row">
-        <button className="square">7</button>
-        <button className="square">8</button>
-        <button className="square">9</button>
-      </div>
-    </>
-  )
-}
-
 function App() {
   const [count, setCount] = useState(0);
 
@@ -112,6 +91,7 @@ function App() {
           Front page edit
         </p>
         <Board />
+        <br></br>
         <MyButton count={count} onClick={handleClick}/>
         <MyButton count={count} onClick={handleClick}/>
         <Profile />
