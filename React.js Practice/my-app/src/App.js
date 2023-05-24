@@ -3,8 +3,8 @@ import './App.css';
 import { useState } from 'react';
 
 const user = {
-  name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  name: 'Sam Sit',
+  imageUrl: 'https://i.imgur.com/mcSbDgQ.jpg',
   imageSize: 90,
 };
 
@@ -88,6 +88,7 @@ function App() {
         <p>
           Front page edit
         </p>
+        <MyButton />
         <MyButton />
         <Profile />
         <ListTest />
