@@ -24,13 +24,29 @@ function Profile() {
   );
 }
 
-
 function MyButton() {
   return (
     <button>test button</button>
   );
 }
 
+const products = [
+  { title: 'Cabbage', id: 1 },
+  { title: 'Garlic', id: 2 },
+  { title: 'Apple', id: 3 },
+];
+
+const listItems = products.map(product =>
+  <li key={product.id}>
+    {product.title}
+  </li>
+);
+
+function ListTest() {
+  return (
+    <ul>{listItems}</ul>
+  );
+}
 function App() {
   return (
     <div className="App">
@@ -41,6 +57,7 @@ function App() {
         </p>
         <MyButton />
         <Profile />
+        <ListTest />
         <a
           className="App-link"
           href="https://reactjs.org"
