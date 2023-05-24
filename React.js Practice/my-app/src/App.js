@@ -25,15 +25,10 @@ function Profile() {
   );
 }
 
-function MyButton() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
+function MyButton({count, onClick}) {
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={onClick}>
       Clicked {count} times
     </button>
   );
@@ -81,6 +76,12 @@ function ShoppingList() {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -88,8 +89,8 @@ function App() {
         <p>
           Front page edit
         </p>
-        <MyButton />
-        <MyButton />
+        <MyButton count={count} onClick={handleClick}/>
+        <MyButton count={count} onClick={handleClick}/>
         <Profile />
         <ListTest />
         <ShoppingList />
