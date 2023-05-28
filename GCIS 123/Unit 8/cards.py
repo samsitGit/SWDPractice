@@ -70,9 +70,15 @@ def draw(deck, hand):
     if len(deck) == 0:
         return None
     else:
-        cardNum = random.randint(0,len(deck))
+        #cardNum = random.randint(0,len(deck)-1)
+        cardNum=len(deck)-1
         card = deck[cardNum]
         deck.pop(cardNum)
         hand.append(card)
     return card
 
+def deal_one_hand(deck, num):
+    hand = []
+    for i in range(num):
+        draw(deck, hand)[3]
+    return hand

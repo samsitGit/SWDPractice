@@ -110,3 +110,17 @@ def test_shuffle_deck():
     assert result2 != expected2
     assert result3 != expected3
     assert result4 != expected4
+
+def test_deal_one_hand():
+    #set up
+    deck = c.make_deck()
+    expected = 5
+    expectedDeck = 52-5
+
+    #invoke
+    result = len(c.deal_one_hand(deck, 5))
+    resultDeck = len(deck)
+
+    #analyze
+    assert result == expected
+    assert resultDeck == expectedDeck
