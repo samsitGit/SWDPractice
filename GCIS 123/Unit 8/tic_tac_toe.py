@@ -36,9 +36,14 @@ def make_move(b, s):
     print_board(b)
 
 def main():
-    print_board(make_board())
+    #print_board(make_board())
     b = make_board()
-    make_move(b, "X")
-    make_move(b, "O")
+    print_board(b)
+    for i in range(9):
+        if i % 2:
+            make_move(b, "O")
+        else:
+            make_move(b, "X")
+    print("The game is over!")
 
 main()
