@@ -7,6 +7,9 @@ def make_card(rank, suit):
     rankWord = rank
     shortChar = rank
     shortSuit = suit[0]
+    red = "\033[31m"
+    blue = "\033[34m"
+    norm = "\033[37m"
 
     if rank == "Jack":
         rank = 11
@@ -26,6 +29,11 @@ def make_card(rank, suit):
     shorthand = str(shortChar) + shortSuit
     if len(shorthand) == 2:
         shorthand = " " + shorthand
+
+    if shortSuit == "S" or shortSuit == "C":
+        shorthand = blue + shorthand + norm
+    else:
+        shorthand = red + shorthand + norm
 
     rank = str(rank)
     result = (rank, suit, name, shorthand)
