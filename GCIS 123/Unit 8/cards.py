@@ -65,3 +65,14 @@ def shuffle(deck):
         j = random.randint(i, 51)
         swap(deck, i, j)
     return deck
+
+def draw(deck, hand):
+    if len(deck) == 0:
+        return None
+    else:
+        cardNum = random.randint(0,len(deck))
+        card = deck[cardNum]
+        deck.pop(cardNum)
+        hand.append(card)
+    return card
+
