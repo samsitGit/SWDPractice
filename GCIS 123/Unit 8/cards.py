@@ -11,18 +11,19 @@ def make_card(rank, suit):
     blue = "\033[34m"
     norm = "\033[37m"
 
-    if rank == "Jack":
-        rank = 11
+    if rank == 11:
+        rankWord = "Jack"
         shortChar = "J"
-    elif rank == "Queen":
-        rank = 12
+    elif rank == 12:
+        rankWord = "Queen"
         shortChar = "Q"
-    elif rank == "King":
-        rank = 13
+    elif rank == 13:
+        rankWord = "King"
         shortChar = "K"
-    elif rank == "Ace":
-        rank = 14
+    elif rank == 14:
+        rankWord = "Ace"
         shortChar = "A"
+    rank = str(rank)
     
     name = str(rankWord) + " of " + suit
 
@@ -35,6 +36,10 @@ def make_card(rank, suit):
     else:
         shorthand = red + shorthand + norm
 
-    rank = str(rank)
     result = (rank, suit, name, shorthand)
     return result
+
+def make_deck():
+    for i in range(4):
+        for j in range(13):
+            print(i)
