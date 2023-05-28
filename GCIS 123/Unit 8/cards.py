@@ -3,6 +3,8 @@
     Author: Sam Sit
 '''
 
+import random
+
 def make_card(rank, suit):
     rankWord = rank
     shortChar = rank
@@ -51,4 +53,15 @@ def make_deck():
             suit = "Diamonds"
         for j in range(13):
             deck.append(make_card(j+2, suit))
+    return deck
+
+def swap(list, a, b):
+    temp = list[a]
+    list[a] = list[b]
+    list[b] = temp
+
+def shuffle(deck):
+    for i in range(len(deck)-1):
+        j = random.randint(i, 51)
+        swap(deck, i, j)
     return deck
