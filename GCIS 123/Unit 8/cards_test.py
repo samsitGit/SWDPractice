@@ -25,3 +25,43 @@ def test_make_card_10():
 
     #analyze
     assert result == expected
+
+def test_make_card_J():
+    #set up
+    expected = ("11", "Clubs", "Jack of Clubs", " JC")
+
+    #invoke
+    result = c.make_card("Jack", "Clubs")
+
+    #analyze
+    assert result == expected
+
+def test_make_card_Q():
+    #set up
+    expected = ("12", "Diamonds", "Queen of Diamonds", " QD")
+
+    #invoke
+    result = c.make_card("Queen", "Diamonds")
+
+    #analyze
+    assert result == expected
+
+def test_make_card_K():
+    #set up
+    expected = ("13", "Hearts", "King of Hearts", " KH")
+
+    #invoke
+    result = c.make_card("King", "Hearts")
+
+    #analyze
+    assert result == expected
+
+def test_make_card_A():
+    #set up
+    expected = ("14", "Spades", "Ace of Spades", " AS")
+
+    #invoke
+    result = c.make_card("Ace", "Spades")
+
+    #analyze
+    assert result == expected

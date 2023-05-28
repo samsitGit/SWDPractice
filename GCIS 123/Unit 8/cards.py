@@ -7,7 +7,6 @@ def make_card(rank, suit):
     rankWord = rank
     shortChar = rank
     shortSuit = suit[0]
-    rank = str(rank)
 
     if rank == "Jack":
         rank = 11
@@ -28,5 +27,6 @@ def make_card(rank, suit):
     if len(shorthand) == 2:
         shorthand = " " + shorthand
 
+    rank = str(rank)
     result = (rank, suit, name, shorthand)
     return result
