@@ -40,6 +40,15 @@ def make_card(rank, suit):
     return result
 
 def make_deck():
+    deck = []
     for i in range(4):
+        suit = "Spades"
+        if i == 1:
+            suit = "Hearts"
+        elif i == 2:
+            suit = "Clubs"
+        elif i == 3:
+            suit = "Diamonds"
         for j in range(13):
-            print(i)
+            deck.append(make_card(j+2, suit))
+    return deck

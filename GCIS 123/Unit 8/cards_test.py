@@ -69,3 +69,23 @@ def test_make_card_A():
 
     #analyze
     assert result == expected
+
+def test_make_deck():
+    #set up
+    expected1 = ("14", "Spades", "Ace of Spades", blue+" AS"+norm)
+    expected2 = ("14", "Hearts", "Ace of Hearts", red+" AH"+norm)
+    expected3 = ("14", "Clubs", "Ace of Clubs", blue+" AC"+norm)
+    expected4 = ("14", "Diamonds", "Ace of Diamonds", red+" AD"+norm)
+
+    #invoke
+    deck = c.make_deck()
+    result1 = deck[12]
+    result2 = deck[25]
+    result3 = deck[38]
+    result4 = deck[51]
+
+    #analyze
+    assert result1 == expected1
+    assert result2 == expected2
+    assert result3 == expected3
+    assert result4 == expected4
