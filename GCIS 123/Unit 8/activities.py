@@ -193,6 +193,13 @@ def lucky_7s(a):
     a.sort(key=sevens_key)
     print(a)
 
+def comprehension():
+    print([x for x in "foobar"])
+    print([0 for x in range(15)])
+    print([x for x in range(13)])
+    print([x for x in range(0, 20, 2)])
+    print([x for x in range(0, 50) if not x % 3 or not x % 5])
+
 def main():
     '''
     x = ("a", 123, False)
@@ -291,11 +298,12 @@ def main():
     
     d = list("1234567890")
     chunky(d, 3)
-    '''
+    
     a = array_utils.range_array(0, 100, 1)
     b = []
     for i in range(len(a)):
         b.append(a[i])
     lucky_7s(b)
-
+    '''
+    comprehension()
 main()
