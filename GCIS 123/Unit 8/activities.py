@@ -1,5 +1,5 @@
 '''
-    8.2-3 Lecture
+    8 Lecture
     Author: Sam Sit
 '''
 
@@ -182,6 +182,17 @@ def chunky(a, s):
         c = a[i*s:i*s+s]
         print(c)
 
+def sevens_key(n):
+    if str(n)[0] == "7":
+        return 0
+    else:
+        return 1
+    
+def lucky_7s(a):
+    print(a)
+    a.sort(key=sevens_key)
+    print(a)
+
 def main():
     '''
     x = ("a", 123, False)
@@ -277,8 +288,14 @@ def main():
     print(swapper(b))
     print(swapper(c))
     print(swapper(d))
-    '''
+    
     d = list("1234567890")
     chunky(d, 3)
+    '''
+    a = array_utils.range_array(0, 100, 1)
+    b = []
+    for i in range(len(a)):
+        b.append(a[i])
+    lucky_7s(b)
 
 main()
