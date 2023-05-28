@@ -15,3 +15,13 @@ def test_make_card_1():
 
     #analyze
     assert result == expected
+
+def test_make_card_10():
+    #set up
+    expected = ("10", "Clubs", "10 of Clubs", "10C")
+
+    #invoke
+    result = c.make_card(10, "Clubs")
+
+    #analyze
+    assert result == expected
