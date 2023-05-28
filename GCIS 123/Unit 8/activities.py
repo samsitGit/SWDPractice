@@ -200,6 +200,16 @@ def comprehension():
     print([x for x in range(0, 20, 2)])
     print([x for x in range(0, 50) if not x % 3 or not x % 5])
 
+def make_table(r, c, v):
+    t = []
+    for i in range(r):
+        r = []
+        for j in range(c):
+            r.append(v)
+        t.append(r)
+        print(r)
+    return t
+
 def main():
     '''
     x = ("a", 123, False)
@@ -304,6 +314,8 @@ def main():
     for i in range(len(a)):
         b.append(a[i])
     lucky_7s(b)
-    '''
+    
     comprehension()
+    '''
+    make_table(4, 6, 0)
 main()
