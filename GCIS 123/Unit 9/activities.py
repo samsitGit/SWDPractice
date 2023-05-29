@@ -102,6 +102,12 @@ def intersection(a, b):
             c.add(i)
     return c
 
+def union(a, b):
+    c = b
+    for i in a:
+        c.add(i)
+    return c
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -131,9 +137,13 @@ def main():
     a = set("abc")
     b = set("bce")
     print(subset(a, b))
-    '''
+    
     a = set("a1bc")
     b = set("abcd1")
     print(intersection(a, b))
+    '''
+    a = set("a1bc")
+    b = set("abc2d1")
+    print(union(a, b))
 
 main()
