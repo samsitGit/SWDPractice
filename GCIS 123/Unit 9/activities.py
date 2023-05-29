@@ -64,7 +64,7 @@ def coupon_collector(n):
 def mixup():
     a = set("characters")
     for i in a:
-        print(a, end = " ")
+        print(i, end = " ")
 
 def main():
     '''
