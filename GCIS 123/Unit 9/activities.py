@@ -85,6 +85,17 @@ def superset(a, b):
     else:
         return False
 
+def subset(b, a):
+    c = 0
+    for i in b:
+        if i in a:
+            c += 1
+    if c == len(b):
+        return True
+    else:
+        return False
+
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -100,12 +111,20 @@ def main():
     mixup()
     
     print(unique_words("data/alice.txt"))
-    '''
+    
     a = set("abc")
     b = set("bc")
     print(superset(a, b))
     a = set("abc")
     b = set("bce")
     print(superset(a, b))
+    '''
+    a = set("abc")
+    b = set("abcd")
+    print(subset(a, b))
+    a = set("abc")
+    b = set("bce")
+    print(subset(a, b))
+    
 
 main()
