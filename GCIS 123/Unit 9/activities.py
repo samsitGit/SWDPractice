@@ -108,6 +108,12 @@ def union(a, b):
         c.add(i)
     return c
 
+def minus(a, b):
+    for i in b:
+        if i in a:
+            a.remove(i)
+    return a
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -142,8 +148,9 @@ def main():
     b = set("abcd1")
     print(intersection(a, b))
     '''
-    a = set("a1bc")
+    a = set("a14234bc")
     b = set("abc2d1")
-    print(union(a, b))
+    print(a)
+    print(minus(a, b))
 
 main()
