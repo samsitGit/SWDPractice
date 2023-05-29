@@ -35,6 +35,8 @@ def play_round(deck, hand):
         discard(hand, amt)
         if(hand[len(hand)-1][0] == hand[len(hand)-4][0]):
             discard(hand, 4)
+        else:
+            discard(hand, 2)
 
     return deck, hand
 
