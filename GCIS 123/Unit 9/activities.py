@@ -61,6 +61,11 @@ def coupon_collector(n):
         count += 1
     return count
 
+def mixup():
+    a = set("characters")
+    for i in a:
+        print(a, end = " ")
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -70,7 +75,9 @@ def main():
     sets()
     
     timing.time_function(fill_set, 5000)
-    '''
+    
     print(coupon_collector(10000))
+    '''
+    mixup()
 
 main()
