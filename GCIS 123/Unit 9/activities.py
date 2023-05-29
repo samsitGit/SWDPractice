@@ -42,12 +42,23 @@ def sets():
     b = set("abbcdefg")
     print(b)
 
+def unique_set(a, v):
+    if v not in a:
+        a.add(v)
+
+def fill_set(l):
+    s = set()
+    for i in range(l-1):
+        unique_set(s, i)
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
     
     timing.time_function(fill_list, 5000)
-    '''
+    
     sets()
+    '''
+    timing.time_function(fill_set, 5000)
 
 main()
