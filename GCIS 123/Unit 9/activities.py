@@ -95,6 +95,12 @@ def subset(b, a):
     else:
         return False
 
+def intersection(a, b):
+    c = set()
+    for i in a:
+        if i in b:
+            c.add(i)
+    return c
 
 def main():
     '''
@@ -118,13 +124,16 @@ def main():
     a = set("abc")
     b = set("bce")
     print(superset(a, b))
-    '''
+    
     a = set("abc")
     b = set("abcd")
     print(subset(a, b))
     a = set("abc")
     b = set("bce")
     print(subset(a, b))
-    
+    '''
+    a = set("a1bc")
+    b = set("abcd1")
+    print(intersection(a, b))
 
 main()
