@@ -7,12 +7,15 @@ import arrays
 import timing
 
 def unique_array(a, v):
+    noneIndex = None
+    noneIndexFound = False
     for i in range(len(a)):
-        if a[i] == None:
-            a[i] = v
-            break
+        if a[i] == None and not noneIndexFound:
+            noneIndex = i
+            noneIndexFound = True
         elif a[i] == v:
             return
+    a[noneIndex] = v
 
 def fill_array(l):
     a = arrays.Array(l)
