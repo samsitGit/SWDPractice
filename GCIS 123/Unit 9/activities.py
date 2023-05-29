@@ -114,6 +114,14 @@ def minus(a, b):
             a.remove(i)
     return a
 
+def names():
+    a = dict()
+    a["S"] = "Sam"
+    a["A"] = "Alden"
+    a["Si"] = "Sit"
+
+    return a
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -147,10 +155,12 @@ def main():
     a = set("a1bc")
     b = set("abcd1")
     print(intersection(a, b))
-    '''
+    
     a = set("a14234bc")
     b = set("abc2d1")
     print(a)
     print(minus(a, b))
+    '''
+    print(names())
 
 main()
