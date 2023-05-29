@@ -66,6 +66,15 @@ def mixup():
     for i in a:
         print(i, end = " ")
 
+def unique_words(fn):
+    words = set()
+    with open(fn) as f:
+        next(f)
+        for word in f:
+            word = word.lower()
+            words.add(word)
+    return len(words)
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -77,7 +86,9 @@ def main():
     timing.time_function(fill_set, 5000)
     
     print(coupon_collector(10000))
-    '''
+    
     mixup()
+    '''
+    print(unique_words("data/alice.txt"))
 
 main()
