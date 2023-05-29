@@ -22,7 +22,21 @@ def fill_array(l):
     for i in range(l-1):
         unique_array(a, i)
 
+def unique_list(a, v):
+    for i in range(len(a)):
+        if a[i] == v:
+            return
+    a.append(v)
+
+def fill_list(l):
+    e = []
+    for i in range(l-1):
+        unique_list(e, i)
+
 def main():
+    '''
     timing.time_function(fill_array, 5000)
+    '''
+    timing.time_function(fill_list, 5000)
 
 main()
