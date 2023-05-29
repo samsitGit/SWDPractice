@@ -33,10 +33,21 @@ def fill_list(l):
     for i in range(l-1):
         unique_list(e, i)
 
+def sets():
+    a = {111, 3, 57}
+    print(a)
+    a.add(5)
+    a.add(4)
+    print(a)
+    b = set("abbcdefg")
+    print(b)
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
-    '''
+    
     timing.time_function(fill_list, 5000)
+    '''
+    sets()
 
 main()
