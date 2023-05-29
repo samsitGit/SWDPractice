@@ -75,6 +75,16 @@ def unique_words(fn):
             words.add(word)
     return len(words)
 
+def superset(a, b):
+    c = 0
+    for i in b:
+        if i in a:
+            c += 1
+    if c == len(b):
+        return True
+    else:
+        return False
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -88,7 +98,14 @@ def main():
     print(coupon_collector(10000))
     
     mixup()
-    '''
+    
     print(unique_words("data/alice.txt"))
+    '''
+    a = set("abc")
+    b = set("bc")
+    print(superset(a, b))
+    a = set("abc")
+    b = set("bce")
+    print(superset(a, b))
 
 main()
