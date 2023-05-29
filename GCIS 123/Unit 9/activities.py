@@ -5,6 +5,7 @@
 
 import arrays
 import timing
+import random
 
 def unique_array(a, v):
     noneIndex = None
@@ -51,6 +52,15 @@ def fill_set(l):
     for i in range(l-1):
         unique_set(s, i)
 
+def coupon_collector(n):
+    collection = set()
+    count = 0
+    while len(collection) < n:
+        draw = random.randint(1, n)
+        collection.add(draw)
+        count += 1
+    return count
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -58,7 +68,9 @@ def main():
     timing.time_function(fill_list, 5000)
     
     sets()
-    '''
+    
     timing.time_function(fill_set, 5000)
+    '''
+    print(coupon_collector(10000))
 
 main()
