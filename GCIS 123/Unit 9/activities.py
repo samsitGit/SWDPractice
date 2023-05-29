@@ -120,6 +120,9 @@ def names():
     a["A"] = "Alden"
     a["Si"] = "Sit"
 
+    if "S" in a:
+        print(a["S"])
+        
     return a
 
 def main():
