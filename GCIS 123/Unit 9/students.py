@@ -15,7 +15,14 @@ def add_student(population, id, name):
             population.pop(index)
         index += 1
     population.append(make_student(id, name))
-    
+
+def get_student(population, id):
+    for i in population:
+        if id == i[0]:
+            return i
+        else:
+            return None
+
 def main():
     '''
     s1 = make_student(1, "Sam Sit")
@@ -33,5 +40,8 @@ def main():
     add_student(population, 2, "Sun Sit")
     add_student(population, 3, "San Sit")
     add_student(population, 4, "Sin Sit")
+
+    print(get_student(population, 1))
+    print(get_student(population, 6))
 
 main()
