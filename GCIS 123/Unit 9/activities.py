@@ -122,8 +122,13 @@ def names():
 
     if "S" in a:
         print(a["S"])
-        
+
     return a
+
+def print_dict(dict):
+    for key in dict:
+        v = dict[key]
+        print(key, ":", v)
 
 def main():
     '''
@@ -163,7 +168,9 @@ def main():
     b = set("abc2d1")
     print(a)
     print(minus(a, b))
-    '''
+    
     print(names())
+    '''
+    print_dict(names())
 
 main()
