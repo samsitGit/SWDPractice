@@ -16,12 +16,20 @@ def add_student(population, id, name):
         index += 1
     population.append(make_student(id, name))
 
+def add_student922(population, id, name):
+    population[id] = make_student(id, name)
+
 def get_student(population, id):
     for i in population:
         if id == i[0]:
             return i
         else:
             return None
+
+def get_student922(population, id):
+    if id in population:
+        return population[id]
+    return None
 
 def add_credits(population, id, credits):
     s = get_student(population, id)
@@ -45,19 +53,30 @@ def main():
     print(s2)
     print(s3)
     print(s4)
-    '''
+    
     population = []
 
     add_student(population, 1, "Sam Sit")
     add_student(population, 2, "Sun Sit")
     add_student(population, 3, "San Sit")
     add_student(population, 4, "Sin Sit")
-    '''
+    
     print(get_student(population, 1))
     print(get_student(population, 6))
-    '''
+
     add_credits(population, 1, 50)
     print(get_credits(population, 1))
+    '''
+    #9.22
+    population922 = dict()
+
+    add_student922(population922, 1, "Sam Sit")
+    add_student922(population922, 2, "Sun Sit")
+    add_student922(population922, 3, "San Sit")
+    add_student922(population922, 4, "Sin Sit")
+    
+    print(get_student922(population922, 1))
+    print(get_student922(population922, 6))
 
 
 main()
