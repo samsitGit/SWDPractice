@@ -130,6 +130,22 @@ def print_dict(dict):
         v = dict[key]
         print(key, ":", v)
 
+def count_words(filename):
+    result = dict()
+    with open(filename) as file:
+        for line in file:
+            line = line.lower()
+            words = line.split()
+            for word in words:
+                if word[-1] == "." or word[-1] == ",":
+                    word = word[:-1]
+                if word in result:
+                    result[word] += 1
+                else:
+                    result[word] = 1
+    sorted_results = sorted(result.items(), key=lambda x:x[1])
+    return sorted_results
+                
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -170,7 +186,11 @@ def main():
     print(minus(a, b))
     
     print(names())
-    '''
+    
     print_dict(names())
+    '''
+    result = count_words("data/alice.txt")
+    for i in result:
+        print (i)
 
 main()
