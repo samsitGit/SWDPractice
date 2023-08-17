@@ -163,7 +163,15 @@ def find_max(dict):
             max = v
             high_key = key
     return high_key + ":" + str(max)
-           
+
+def hashes():
+    a = "Hello World!"
+    b = "Hello world!"
+    print(hash(a))
+    print(hash(b))
+    print(hash("a"*100000))
+    print(hash("a"*10000000000))
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -210,8 +218,10 @@ def main():
     result = count_words("data/alice.txt")
     for i in result:
         print (i)
-    '''
     
     print(find_max(numbers()))
+    '''
+
+    hashes()
 
 main()
