@@ -145,7 +145,25 @@ def count_words(filename):
                     result[word] = 1
     sorted_results = sorted(result.items(), key=lambda x:x[1])
     return sorted_results
-                
+
+def numbers():
+    a = dict()
+    a["S"] = 5
+    a["A"] = 2
+    a["Si"] = 3
+
+    return a
+
+def find_max(dict):
+    max = 0
+    high_key = ""
+    for key in dict:
+        v = dict[key]
+        if v > max:
+            max = v
+            high_key = key
+    return high_key + ":" + str(max)
+           
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -188,9 +206,12 @@ def main():
     print(names())
     
     print_dict(names())
-    '''
+    
     result = count_words("data/alice.txt")
     for i in result:
         print (i)
+    '''
+    
+    print(find_max(numbers()))
 
 main()
