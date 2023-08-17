@@ -172,6 +172,21 @@ def hashes():
     print(hash("a"*100000))
     print(hash("a"*10000000000))
 
+def collisions(filename, length, hash_func=hash):
+    arr = [None] * length
+    count = 0
+    with open(filename) as file:
+        for line in file:
+            if line.strip() == "":
+                continue
+            else:
+                count += 1
+                index = hash_func(line) % length
+                if arr[index] == None:
+                    arr[index] = line.strip()
+                else:
+                    return count
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -220,8 +235,9 @@ def main():
         print (i)
     
     print(find_max(numbers()))
-    '''
 
     hashes()
+    '''
+    print(collisions("data/alice.txt", 10000))
 
 main()
