@@ -197,7 +197,7 @@ def string_hash(a):
         j = ord(i)
         if j > max:
             max = j
-    return max
+    return max*len(a)*ord(a[int(len(a)/2)])
 
 def main():
     '''
