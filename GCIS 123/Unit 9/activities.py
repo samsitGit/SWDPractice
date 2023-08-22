@@ -197,7 +197,15 @@ def string_hash(a):
         j = ord(i)
         if j > max:
             max = j
-    return max*len(a)*ord(a[int(len(a)/2)])
+    return max
+
+def string_hash_gooder(a):
+    max = 0
+    for i in a:
+        j = ord(i)
+        if j > max:
+            max = j
+    return int((max*len(a)*ord(a[int(len(a)/2)]))/ord(a[0]))
 
 def main():
     '''
@@ -253,13 +261,15 @@ def main():
     print(collisions("data/alice.txt", 10000))
 
     ascii_codes("meow")
-    '''
 
     print(string_hash("meow"))
     print(string_hash("jump"))
     print(string_hash("wump"))
+    '''
 
     print(collisions("data/alice.txt", 10000))
     print(collisions("data/alice.txt", 10000, string_hash))
+    print(collisions("data/alice.txt", 10000, string_hash_gooder))
+
 
 main()
