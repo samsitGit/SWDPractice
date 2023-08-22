@@ -187,6 +187,10 @@ def collisions(filename, length, hash_func=hash):
                 else:
                     return count
 
+def ascii_codes(a):
+    for i in a:
+        print(i, ord(i))
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -237,7 +241,10 @@ def main():
     print(find_max(numbers()))
 
     hashes()
-    '''
+    
     print(collisions("data/alice.txt", 10000))
+    '''
+
+    ascii_codes("meow")
 
 main()
