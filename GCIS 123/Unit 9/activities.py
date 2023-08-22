@@ -191,6 +191,14 @@ def ascii_codes(a):
     for i in a:
         print(i, ord(i))
 
+def string_hash(a):
+    max = 0
+    for i in a:
+        j = ord(i)
+        if j > max:
+            max = j
+    return max
+
 def main():
     '''
     timing.time_function(fill_array, 5000)
@@ -243,8 +251,15 @@ def main():
     hashes()
     
     print(collisions("data/alice.txt", 10000))
-    '''
 
     ascii_codes("meow")
+    '''
+
+    print(string_hash("meow"))
+    print(string_hash("jump"))
+    print(string_hash("wump"))
+
+    print(collisions("data/alice.txt", 10000))
+    print(collisions("data/alice.txt", 10000, string_hash))
 
 main()
