@@ -63,41 +63,27 @@ def make_puzzle(N):
         b_set.remove(0)
         col_sets.append(b_set)
 
-
-    # if row > 0 and row % n == 0:
-    #     for i in range(0,n-1):
-    #         for j in range(0,n-1):
-    #             c_set.add(board[i][j])
-    #     c_set.remove(0)
-    #     reg_sets.append(c_set)
-    #     count+=1
-
-    # for row in range(0,N):
-    #     if row > 0 and row % n == 0:
-    #         board_string += "\n"
-    #     for col in range(N):
-    #         if col > 0 and col % n == 0: 
-    #             board_string += " "
-    #         value = board[row][col]
-
     reg_sets=[]
     c_set=set()
     n=int(math.sqrt(N))
-    for column_group in range(0,n):
-        for row in range(0,N-1):
-            for column in range(0+(column_group*n),(column_group*n)+n-1):
-                c_set.add(board[row][column])
-                if (row+1) % n ==0:
-                    c_set.remove(0)
-                    reg_sets.append(c_set)
-    
-    
+    start = 0
+    for row_group in range(0,n):
+        for column_group in range (0,n):
+            c_set=set()
+            for column in range(column_group*n, column_group*n+n):
+                for row in range(row_group*n, row_group*n+n):
+                    c_set.add(board[row][column])
+            c_set.remove(0)
+            reg_sets.append(c_set)
+
     #print(board)
     for i in board:
         print(i)
-    print(row_sets)
-    print(col_sets)
-    print(reg_sets)
+    #print(row_sets)
+    #print(col_sets)
+    for i in reg_sets:
+        print(i)
+    #print(reg_sets)
     # pass
 
 
