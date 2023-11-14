@@ -14,7 +14,7 @@ class WorkoutApp:
         self.timer_id = None
         self.ready_time = 3  # Change the initial countdown time here
 
-        self.label = tk.Label(master, text="Ready for Arm circles?", font=("Helvetica", 24), justify="center", pady=20)
+        self.label = tk.Label(master, text="Ready for Arm circles (mobility)?", font=("Helvetica", 24), justify="center", pady=20)
         self.label.pack(expand=True, fill="both")
         self.label.bind("<Button-1>", self.start_timer)
 
@@ -103,6 +103,7 @@ def load_exercise_data(program):
 
 if __name__ == "__main__":
     start_time = time.time()
+    
     workout_data= load_exercise_data("Monday")
 
     root = tk.Tk()
@@ -112,5 +113,6 @@ if __name__ == "__main__":
     app = WorkoutApp(root, workout_data)
     root.mainloop()
     end_time = time.time()
+
     total_time = round(end_time - start_time, 2)
     print(total_time)
