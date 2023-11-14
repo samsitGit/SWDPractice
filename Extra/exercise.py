@@ -14,7 +14,7 @@ class WorkoutApp:
         self.timer_id = None
         self.ready_time = 3  # Change the initial countdown time here
 
-        self.label = tk.Label(master, text="Ready?", font=("Helvetica", 24), justify="center", pady=20)
+        self.label = tk.Label(master, text="Ready for Arm circles?", font=("Helvetica", 24), justify="center", pady=20)
         self.label.pack(expand=True, fill="both")
         self.label.bind("<Button-1>", self.start_timer)
 
@@ -62,7 +62,10 @@ class WorkoutApp:
         self.current_index += 1
 
         if self.current_index < len(self.workout_data):
-            self.label["text"] = "Ready?"
+            next_exercise = self.workout_data[self.current_index]  # Get the next exercise data
+            next_exercise_name = next_exercise[0]  # Assuming 'Exercise Name' is the key for exercise names
+            next_exercise_type = next_exercise[1]
+            self.label["text"] = f"Ready for {next_exercise_name} ({next_exercise_type})?"
             self.label.bind("<Button-1>", self.start_timer)
             self.start_time = time.time()  # Update start time for the next exercise
         else:
