@@ -38,6 +38,7 @@ class WorkoutApp:
             self.timer_id = self.master.after(1000, self.update_timer, int(duration), exercise)
             self.label.bind("<Button-1>", self.interrupt_timer)
         else:
+            self.timer_id = self.master.after(1000, self.update_timer, int(duration), exercise)
             self.label.bind("<Button-1>", self.interrupt_timer)
 
     def update_timer(self, remaining, exercise):
@@ -57,8 +58,7 @@ class WorkoutApp:
         self.finish_exercise(self.workout_data[self.current_index][0])
 
     def finish_exercise(self, exercise):
-        if not self.interrupted:
-            self.reps = int(simpledialog.askstring("Reps", f"Enter the number of reps for {exercise}:"))
+        self.reps = int(simpledialog.askstring("Reps", f"Enter the number of reps for {exercise}:"))
         self.current_index += 1
 
         if self.current_index < len(self.workout_data):
@@ -104,7 +104,7 @@ def load_exercise_data(program):
 if __name__ == "__main__":
     start_time = time.time()
     
-    workout_data= load_exercise_data("Monday")
+    workout_data= load_exercise_data("Wednesday")
 
     root = tk.Tk()
     root.title("Workout Timer")
@@ -116,3 +116,4 @@ if __name__ == "__main__":
 
     total_time = round(end_time - start_time, 2)
     print(total_time)
+    print(total_time/60)
