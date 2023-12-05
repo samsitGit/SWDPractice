@@ -4,12 +4,13 @@ import time
 import csv
 
 class WorkoutApp:
-    def __init__(self, master, workout_data):
+    def __init__(self, master, workout_data, results):
         self.master = master
         self.workout_data = workout_data
         self.current_index = 0
         self.reps = 0
         self.start_time = time.time()
+        self.results = results
         self.interrupted = False
         self.timer_id = None
         self.ready_time = 3  # Change the initial countdown time here
@@ -33,13 +34,10 @@ class WorkoutApp:
         self.interrupted = False
         exercise, exercise_type, duration = self.workout_data[self.current_index]
         self.label["text"] = f"{exercise} ({exercise_type}) - {self.format_duration(duration)}"
+        self.start_time = time.time()  # Record the start time for this exercise
 
-        if exercise_type == "mobility":
-            self.timer_id = self.master.after(1000, self.update_timer, int(duration), exercise)
-            self.label.bind("<Button-1>", self.interrupt_timer)
-        else:
-            self.timer_id = self.master.after(1000, self.update_timer, int(duration), exercise)
-            self.label.bind("<Button-1>", self.interrupt_timer)
+        self.timer_id = self.master.after(1000, self.update_timer, int(duration), exercise)
+        self.label.bind("<Button-1>", self.interrupt_timer)
 
     def update_timer(self, remaining, exercise):
         if remaining == 0 or self.interrupted:
@@ -60,8 +58,12 @@ class WorkoutApp:
     def finish_exercise(self, exercise):
         exercise, exercise_type, duration = self.workout_data[self.current_index]
 
+        exercise_time = round(time.time() - self.start_time, 2)
+
         if exercise_type != "mobility":
             self.reps = int(simpledialog.askstring("Reps", f"Enter the number of reps for {exercise}:"))
+
+        results.append((exercise, exercise_type, self.reps, exercise_time))
 
         self.current_index += 1
 
@@ -76,22 +78,22 @@ class WorkoutApp:
             self.end_workout()
 
     def end_workout(self):
-        end_time = time.time()
-        total_time = round(end_time - self.start_time, 2)
 
-        main_exercises = [exercise for exercise, _, _ in self.workout_data if "(" in exercise]
-        misc_exercises = [exercise for exercise, _, _ in self.workout_data if "(" not in exercise]
+        print("Workout Completed")
 
-        main_exercises_time = {exercise: round(sum(d for _, _, d in self.workout_data if exercise in _ and "(" in _), 2) for exercise in main_exercises}
-        misc_exercises_time = {exercise: round(sum(d for _, _, d in self.workout_data if exercise in _ and "(" not in _), 2) for exercise in misc_exercises}
+        print("Main exercises:")
+        for exercise, exercise_type, reps, exercise_time in results:
+            if exercise_type != "mobility":
+                print(" ", reps, exercise_type, exercise, "in", exercise_time, "seconds")
 
-        total_time += self.ready_time  # Include the ready time in the total time
+        print()
+        print("Mobility exercises")
+        for exercise, exercise_type, reps, exercise_time in results:
+            if exercise_type == "mobility":
+                print(" ", exercise, "for", exercise_time, "seconds")
 
-        messagebox.showinfo(
-            "Workout Completed",
-            f"Total time: {total_time}s\n\nMain Exercises:\n{main_exercises_time}\n\nMisc Exercises:\n{misc_exercises_time}"
-        )
         self.master.destroy()
+
 
     def format_duration(self, duration):
         if isinstance(duration, int):
@@ -108,16 +110,19 @@ def load_exercise_data(program):
 if __name__ == "__main__":
     start_time = time.time()
     
-    workout_data= load_exercise_data("Wednesday")
+    workout_data = load_exercise_data("test")
 
     root = tk.Tk()
     root.title("Workout Timer")
     root.geometry("500x200")
 
-    app = WorkoutApp(root, workout_data)
+    results = []
+    app = WorkoutApp(root, workout_data, results)
     root.mainloop()
     end_time = time.time()
 
-    total_time = round(end_time - start_time, 2)
-    print(total_time)
-    print(total_time/60)
+    print()
+    print("Total time: ")
+    total_time = end_time - start_time
+    print(round(total_time, 2), "seconds")
+    print(round(total_time/60,2), "minutes")
