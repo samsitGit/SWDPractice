@@ -58,7 +58,11 @@ class WorkoutApp:
         self.finish_exercise(self.workout_data[self.current_index][0])
 
     def finish_exercise(self, exercise):
-        self.reps = int(simpledialog.askstring("Reps", f"Enter the number of reps for {exercise}:"))
+        exercise, exercise_type, duration = self.workout_data[self.current_index]
+
+        if exercise_type != "mobility":
+            self.reps = int(simpledialog.askstring("Reps", f"Enter the number of reps for {exercise}:"))
+
         self.current_index += 1
 
         if self.current_index < len(self.workout_data):
